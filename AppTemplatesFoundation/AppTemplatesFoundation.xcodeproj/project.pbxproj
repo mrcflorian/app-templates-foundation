@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCWordpressPost.swift; path = ../../Models/ATCWordpressPost.swift; sourceTree = "<group>"; };
+		17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWordpressPost.swift; sourceTree = "<group>"; };
 		17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookPost.swift; sourceTree = "<group>"; };
 		17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookUser.swift; sourceTree = "<group>"; };
 		17AF81001E4694CD00F66FE8 /* ATCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUser.swift; sourceTree = "<group>"; };
