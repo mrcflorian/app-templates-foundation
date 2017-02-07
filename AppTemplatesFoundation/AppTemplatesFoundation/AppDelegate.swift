@@ -6,6 +6,11 @@
 //  Copyright © 2017 iOS App Templates. All rights reserved.
 //
 
+import Fabric
+import FacebookCore
+import FacebookLogin
+import FacebookShare
+import TwitterKit
 import UIKit
 
 @UIApplicationMain
@@ -13,9 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if (AppConfiguration.isLoginScreenEnabled) {
+            if (AppConfiguration.isTwitterLoginEnabled) {
+                Fabric.with([Twitter.self])
+            }
+            if (AppConfiguration.isFacebookLoginEnabled) {
+                return SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+            }
+        }
+        return true
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        if (AppConfiguration.isFacebookLoginEnabled) {
+            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        }
         return true
     }
 

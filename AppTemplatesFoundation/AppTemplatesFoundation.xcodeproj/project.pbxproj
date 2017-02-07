@@ -19,6 +19,11 @@
 		17AF81131E46958400F66FE8 /* A1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81111E46958400F66FE8 /* A1TableViewController.swift */; };
 		17AF81141E46958400F66FE8 /* A1TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AF81121E46958400F66FE8 /* A1TableViewController.xib */; };
 		17AF81161E46A0AC00F66FE8 /* ATCRSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81151E46A0AC00F66FE8 /* ATCRSSFeed.swift */; };
+		17AF81181E495A8E00F66FE8 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81171E495A8E00F66FE8 /* AppConfiguration.swift */; };
+		17AF811B1E495BE000F66FE8 /* ATCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81191E495BE000F66FE8 /* ATCLoginViewController.swift */; };
+		17AF811C1E495BE000F66FE8 /* ATCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */; };
+		17AF811F1E495DF700F66FE8 /* Misc.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF811E1E495DF700F66FE8 /* Misc.xcassets */; };
+		17AF81221E495F5500F66FE8 /* ATCViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81211E495F5500F66FE8 /* ATCViewControllerFactory.swift */; };
 		17CCC70E1E46916800F41ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCC70D1E46916800F41ACD /* AppDelegate.swift */; };
 		17CCC7101E46916800F41ACD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCC70F1E46916800F41ACD /* ViewController.swift */; };
 		17CCC7131E46916800F41ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC7111E46916800F41ACD /* Main.storyboard */; };
@@ -40,6 +45,11 @@
 		17AF81111E46958400F66FE8 /* A1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = A1TableViewController.swift; path = ViewControllers/A1TableViewController.swift; sourceTree = "<group>"; };
 		17AF81121E46958400F66FE8 /* A1TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = A1TableViewController.xib; path = ViewControllers/A1TableViewController.xib; sourceTree = "<group>"; };
 		17AF81151E46A0AC00F66FE8 /* ATCRSSFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCRSSFeed.swift; sourceTree = "<group>"; };
+		17AF81171E495A8E00F66FE8 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		17AF81191E495BE000F66FE8 /* ATCLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLoginViewController.swift; sourceTree = "<group>"; };
+		17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCLoginViewController.xib; sourceTree = "<group>"; };
+		17AF811E1E495DF700F66FE8 /* Misc.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Misc.xcassets; sourceTree = "<group>"; };
+		17AF81211E495F5500F66FE8 /* ATCViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerFactory.swift; sourceTree = "<group>"; };
 		17CCC70A1E46916800F41ACD /* AppTemplatesFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplatesFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CCC70D1E46916800F41ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CCC70F1E46916800F41ACD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +84,8 @@
 		17AF80F81E46944C00F66FE8 /* AppTemplatesCore */ = {
 			isa = PBXGroup;
 			children = (
+				17AF81201E495F2400F66FE8 /* Helpers */,
+				17AF811D1E495D8D00F66FE8 /* Assets */,
 				17AF80FD1E4694B100F66FE8 /* Config */,
 				17AF80FC1E4694A100F66FE8 /* Networking */,
 				17AF80FA1E46945B00F66FE8 /* Models */,
@@ -110,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				17AF81081E4694DB00F66FE8 /* ATCTableViewController.swift */,
+				17AF81191E495BE000F66FE8 /* ATCLoginViewController.swift */,
+				17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
@@ -137,6 +151,22 @@
 				17AF81121E46958400F66FE8 /* A1TableViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		17AF811D1E495D8D00F66FE8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				17AF811E1E495DF700F66FE8 /* Misc.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		17AF81201E495F2400F66FE8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				17AF81211E495F5500F66FE8 /* ATCViewControllerFactory.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		17CCC7011E46916800F41ACD = {
@@ -169,6 +199,7 @@
 				17CCC7141E46916800F41ACD /* Assets.xcassets */,
 				17CCC7161E46916800F41ACD /* LaunchScreen.storyboard */,
 				17CCC7191E46916800F41ACD /* Info.plist */,
+				17AF81171E495A8E00F66FE8 /* AppConfiguration.swift */,
 			);
 			path = AppTemplatesFoundation;
 			sourceTree = "<group>";
@@ -254,9 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CCC7181E46916800F41ACD /* LaunchScreen.storyboard in Resources */,
+				17AF811C1E495BE000F66FE8 /* ATCLoginViewController.xib in Resources */,
 				17CCC7151E46916800F41ACD /* Assets.xcassets in Resources */,
 				17CCC7131E46916800F41ACD /* Main.storyboard in Resources */,
 				17AF81141E46958400F66FE8 /* A1TableViewController.xib in Resources */,
+				17AF811F1E495DF700F66FE8 /* Misc.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +351,7 @@
 				17AF81161E46A0AC00F66FE8 /* ATCRSSFeed.swift in Sources */,
 				17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */,
 				17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */,
+				17AF811B1E495BE000F66FE8 /* ATCLoginViewController.swift in Sources */,
 				17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */,
 				17AF810E1E4694E400F66FE8 /* ATCFacebookAPIManager.swift in Sources */,
 				17AF810A1E4694DB00F66FE8 /* ATCTableViewController.swift in Sources */,
@@ -327,6 +361,8 @@
 				17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */,
 				17AF81041E4694CD00F66FE8 /* ATCUser.swift in Sources */,
 				17CCC7101E46916800F41ACD /* ViewController.swift in Sources */,
+				17AF81221E495F5500F66FE8 /* ATCViewControllerFactory.swift in Sources */,
+				17AF81181E495A8E00F66FE8 /* AppConfiguration.swift in Sources */,
 				17CCC70E1E46916800F41ACD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

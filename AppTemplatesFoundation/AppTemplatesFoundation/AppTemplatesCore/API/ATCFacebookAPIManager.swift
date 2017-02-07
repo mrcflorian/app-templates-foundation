@@ -12,7 +12,7 @@ import FacebookLogin
 let kGraphPathMe = "me"
 let kGraphPathMePageLikes = "me/likes"
 
-class FacebookAPIManager {
+class ATCFacebookAPIManager {
 
     let accessToken: AccessToken
     let networkingManager = ATCNetworkingManager()
