@@ -42,6 +42,8 @@ class ATCLoginViewController: UIViewController {
         prepareLoginButton(loginButton)
         prepareTwitterButton(twitterLoginButton)
         prepareFacebookButton(facebookLoginButton)
+        prepareUITextField(usernameTextField)
+        prepareUITextField(passwordTextField)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,6 +73,12 @@ class ATCLoginViewController: UIViewController {
         button.tintColor = kFacebookLoginButtonTintColor
         button.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
         button.addTarget(self, action: #selector(didTapFacebookLoginButton), for: .touchUpInside)
+    }
+
+    fileprivate func prepareUITextField(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 0.5
+        textField.layer.cornerRadius = 4.0
     }
 
     @objc
