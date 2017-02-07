@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let vc = ATCViewControllerFactory.createLoginViewController()
+        let vc = ATCViewControllerFactory.createLoginViewController(firebaseEnabled: AppConfiguration.isFirebaseIntegrationEnabled)
         self.present(vc, animated: true, completion: nil)
     }
 }

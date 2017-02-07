@@ -7,7 +7,7 @@
 //
 
 public final class ATCViewControllerFactory {
-    static func createLoginViewController() -> ATCLoginViewController {
-        return ATCLoginViewController(nibName: "ATCLoginViewController", bundle: nil)
+    static func createLoginViewController(firebaseEnabled: Bool) -> ATCLoginViewController {
+        return ATCLoginViewController(nibName: "ATCLoginViewController", bundle: nil, firebaseEnabled: firebaseEnabled)
     }
 }

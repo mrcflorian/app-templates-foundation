@@ -19,6 +19,9 @@ target 'AppTemplatesFoundation' do
   pod 'TwitterKit'
   pod 'TwitterCore'
 
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+
   # Pods for AppTemplatesFoundation
 
 end

@@ -10,6 +10,7 @@ import Fabric
 import FacebookCore
 import FacebookLogin
 import FacebookShare
+import Firebase
 import TwitterKit
 import UIKit
 
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (AppConfiguration.isLoginScreenEnabled) {
             if (AppConfiguration.isTwitterLoginEnabled) {
                 Fabric.with([Twitter.self])
+            }
+            if (AppConfiguration.isFirebaseIntegrationEnabled) {
+                FIRApp.configure()
             }
             if (AppConfiguration.isFacebookLoginEnabled) {
                 return SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)

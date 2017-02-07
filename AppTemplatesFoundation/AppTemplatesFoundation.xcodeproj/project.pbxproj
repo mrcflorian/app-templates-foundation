@@ -24,6 +24,8 @@
 		17AF811C1E495BE000F66FE8 /* ATCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */; };
 		17AF811F1E495DF700F66FE8 /* Misc.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF811E1E495DF700F66FE8 /* Misc.xcassets */; };
 		17AF81221E495F5500F66FE8 /* ATCViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81211E495F5500F66FE8 /* ATCViewControllerFactory.swift */; };
+		17AF81241E496CBE00F66FE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17AF81231E496CBE00F66FE8 /* GoogleService-Info.plist */; };
+		17AF81281E4970C700F66FE8 /* ATCFirebaseLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81271E4970C700F66FE8 /* ATCFirebaseLoginManager.swift */; };
 		17CCC70E1E46916800F41ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCC70D1E46916800F41ACD /* AppDelegate.swift */; };
 		17CCC7101E46916800F41ACD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCC70F1E46916800F41ACD /* ViewController.swift */; };
 		17CCC7131E46916800F41ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC7111E46916800F41ACD /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCLoginViewController.xib; sourceTree = "<group>"; };
 		17AF811E1E495DF700F66FE8 /* Misc.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Misc.xcassets; sourceTree = "<group>"; };
 		17AF81211E495F5500F66FE8 /* ATCViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerFactory.swift; sourceTree = "<group>"; };
+		17AF81231E496CBE00F66FE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17AF81271E4970C700F66FE8 /* ATCFirebaseLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseLoginManager.swift; sourceTree = "<group>"; };
 		17CCC70A1E46916800F41ACD /* AppTemplatesFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplatesFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CCC70D1E46916800F41ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CCC70F1E46916800F41ACD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				17AF81211E495F5500F66FE8 /* ATCViewControllerFactory.swift */,
+				17AF81271E4970C700F66FE8 /* ATCFirebaseLoginManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				17CCC7141E46916800F41ACD /* Assets.xcassets */,
 				17CCC7161E46916800F41ACD /* LaunchScreen.storyboard */,
 				17CCC7191E46916800F41ACD /* Info.plist */,
+				17AF81231E496CBE00F66FE8 /* GoogleService-Info.plist */,
 				17AF81171E495A8E00F66FE8 /* AppConfiguration.swift */,
 			);
 			path = AppTemplatesFoundation;
@@ -290,6 +296,7 @@
 				17CCC7131E46916800F41ACD /* Main.storyboard in Resources */,
 				17AF81141E46958400F66FE8 /* A1TableViewController.xib in Resources */,
 				17AF811F1E495DF700F66FE8 /* Misc.xcassets in Resources */,
+				17AF81241E496CBE00F66FE8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +357,7 @@
 			files = (
 				17AF81161E46A0AC00F66FE8 /* ATCRSSFeed.swift in Sources */,
 				17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */,
+				17AF81281E4970C700F66FE8 /* ATCFirebaseLoginManager.swift in Sources */,
 				17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */,
 				17AF811B1E495BE000F66FE8 /* ATCLoginViewController.swift in Sources */,
 				17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */,

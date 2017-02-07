@@ -39,7 +39,7 @@ open class ATCTableViewController<T: ATCBaseModel>: UITableViewController {
 
         switch self.apiResponseType() {
         case .json:
-            // TODO: Consolidate this call with the on below
+            // TODO: Consolidate this call with the one below
             apiManager.retrieveListFromJSON(parameters: self.extraParameters(), completion: { (objects: [T]?, status: ATCNetworkResponseStatus) in
                 if let objects = objects {
                     self.didReceiveStreamObjects(objects: objects)

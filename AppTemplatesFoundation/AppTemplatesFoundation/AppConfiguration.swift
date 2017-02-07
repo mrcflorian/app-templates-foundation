@@ -12,4 +12,6 @@ public final class AppConfiguration {
     public static let isFacebookLoginEnabled = true
     public static let isTwitterLoginEnabled = true
 
+    public static let isFirebaseIntegrationEnabled = true
+
 }

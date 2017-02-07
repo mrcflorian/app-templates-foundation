@@ -8,6 +8,8 @@
 
 import FacebookCore
 import FacebookLogin
+import Firebase
+import FirebaseAuth
 import TwitterKit
 import UIKit
 
@@ -26,6 +28,7 @@ let kFacebookLoginButtonCornerRadius: CGFloat = 13.0
 
 class ATCLoginViewController: UIViewController {
 
+    fileprivate var firebaseEnabled = false
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
@@ -36,6 +39,15 @@ class ATCLoginViewController: UIViewController {
     // Add extra permissions you need
     // Remove permissions you don't need
     private let readPermissions: [ReadPermission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
+
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, firebaseEnabled: Bool) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.firebaseEnabled = firebaseEnabled
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +100,11 @@ class ATCLoginViewController: UIViewController {
             // It should never get here
             return
         }
-        didLogin(method: "email and password", info: "Email: \(email) \n Password: \(pass)")
+        if (firebaseEnabled) {
+            ATCFirebaseLoginManager.signIn(email: email, pass: pass)
+        } else {
+            didLogin(method: "email and password", info: "Email: \(email) \n Password: \(pass)")
+        }
     }
 
     @objc
@@ -103,9 +119,13 @@ class ATCLoginViewController: UIViewController {
         Twitter.sharedInstance().logIn(completion: { session, error in
             if let session = session {
                 // Successful log in with Twitter
-                print("signed in as \(session.userName)");
-                let info = "Username: \(session.userName) \n User ID: \(session.userID)"
-                self.didLogin(method: "Twitter", info: info)
+                if (self.firebaseEnabled) {
+                    let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+                    ATCFirebaseLoginManager.login(credential: credential)
+                } else {
+                    let info = "Username: \(session.userName) \n User ID: \(session.userID)"
+                    self.didLogin(method: "Twitter", info: info)
+                }
             } else {
                 print("error: \(error?.localizedDescription)");
             }
@@ -129,8 +149,13 @@ class ATCLoginViewController: UIViewController {
                 if let email = facebookUser?.email,
                     let firstName = facebookUser?.firstName,
                     let lastName = facebookUser?.lastName {
-                    let info = "First name: \(firstName) \n Last name: \(lastName) \n Email: \(email)"
-                    self.didLogin(method: "Facebook", info: info)
+                    if (self.firebaseEnabled) {
+                        let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+                        ATCFirebaseLoginManager.login(credential: credential)
+                    } else {
+                        let info = "First name: \(firstName) \n Last name: \(lastName) \n Email: \(email)"
+                        self.didLogin(method: "Facebook", info: info)
+                    }
                 }
             })
         }
