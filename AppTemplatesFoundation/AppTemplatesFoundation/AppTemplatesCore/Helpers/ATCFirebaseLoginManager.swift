@@ -10,29 +10,21 @@ import FirebaseAuth
 
 public class ATCFirebaseLoginManager {
     static func login(credential: FIRAuthCredential) {
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-            // ...
-            if let error = error {
-                // ...
-                return
-            }
-        }
+        FIRAuth.auth()?.signIn(with: credential)
     }
 
     static func signIn(email: String, pass: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: pass) { (user, error) in
-            if let error = error {
-                if let errCode = FIRAuthErrorCode(rawValue: error._code) {
-                    switch errCode {
-                    case .errorCodeUserNotFound:
-                        FIRAuth.auth()?.createUser(withEmail: email, password: pass) { (user, error) in
-                            if error == nil {
-                                ATCFirebaseLoginManager.signIn(email: email, pass: pass)
-                            }
+            if let error = error, let errCode = FIRAuthErrorCode(rawValue: error._code) {
+                switch errCode {
+                case .errorCodeUserNotFound:
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pass) { (user, error) in
+                        if error == nil {
+                            ATCFirebaseLoginManager.signIn(email: email, pass: pass)
                         }
-                    default:
-                        return
                     }
+                default:
+                    return
                 }
             }
         }

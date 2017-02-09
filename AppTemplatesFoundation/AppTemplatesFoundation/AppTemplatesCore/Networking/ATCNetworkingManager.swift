@@ -28,8 +28,8 @@ public class ATCNetworkingManager {
 
     func getRSSFeedResponse(path: String, parameters: [String:String]?, completionHandler: @escaping (_ response: RSSFeed?,_ status: ATCNetworkResponseStatus) -> Void) {
         Alamofire.request(path).responseRSS() { response in
-            if let json = response.result.value {
-                completionHandler(json, .success)
+            if let rssFeedXML = response.result.value {
+                completionHandler(rssFeedXML, .success)
             } else {
                 completionHandler(nil, .error(string: response.result.error?.localizedDescription))
             }
