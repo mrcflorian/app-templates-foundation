@@ -67,7 +67,7 @@ open class ATCSettingsTableViewController: UITableViewController {
         let item = settings[indexPath.row]
         switch item.style {
         case .more, .text:
-            item.action()
+            item.action(self)
         case .toggle: break
         }
     }

@@ -6,6 +6,8 @@
 //  Copyright © 2017 iOS App Templates. All rights reserved.
 //
 
+import UIKit
+
 public enum ATCSettingsItemStyle {
     case toggle
     case text
@@ -14,12 +16,12 @@ public enum ATCSettingsItemStyle {
 
 open class ATCSettingsItem {
     let style: ATCSettingsItemStyle
-    let action: ((Void) -> (Void))
+    let action: ((_ viewController: UIViewController?) -> (Void))
     let title: String
 
     let toggleValue: Bool?
 
-    init(title: String, style: ATCSettingsItemStyle, action: @escaping (Void) -> (Void), toggleValue: Bool? = nil) {
+    init(title: String, style: ATCSettingsItemStyle, action: @escaping (UIViewController?) -> (Void), toggleValue: Bool? = nil) {
         self.style = style
         self.action = action
         self.title = title

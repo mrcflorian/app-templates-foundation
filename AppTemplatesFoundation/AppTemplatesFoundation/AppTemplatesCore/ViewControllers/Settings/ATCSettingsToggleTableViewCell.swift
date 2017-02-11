@@ -23,6 +23,6 @@ open class ATCSettingsToggleTableViewCell: UITableViewCell {
         label.text = item.title
     }
     @IBAction func didToggleSwitch(_ sender: UISwitch) {
-        item?.action()
+        item?.action(nil)
     }
 }

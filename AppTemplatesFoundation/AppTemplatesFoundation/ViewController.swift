@@ -16,8 +16,11 @@ class ViewController: UIViewController {
 
         self.view.backgroundColor = .red
 
-        let action: (Void) -> (Void) = {
+        let action = { (_ viewController: UIViewController?) -> (Void) in
             print ("Sexyyyy")
+            let newVC = UIViewController()
+            newVC.title = "Terms & Fucking Conditions"
+            viewController?.navigationController?.pushViewController(newVC, animated: false)
         }
         let sItem1 = ATCSettingsItem(title: "Push notifications", style: .toggle, action: action, toggleValue: true)
         let sItem2 = ATCSettingsItem(title: "Terms & Conditions", style: .more, action: action)

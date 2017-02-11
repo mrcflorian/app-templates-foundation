@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osy-Bl-z93">
-                        <rect key="frame" x="16" y="11" width="257" height="21"/>
+                        <rect key="frame" x="18" y="11" width="255" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                 <constraints>
                     <constraint firstItem="Gft-gJ-AGr" firstAttribute="leading" secondItem="osy-Bl-z93" secondAttribute="trailing" constant="13" id="0fk-Xp-yCc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Gft-gJ-AGr" secondAttribute="trailing" constant="6" id="Egr-e3-a3U"/>
-                    <constraint firstItem="osy-Bl-z93" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="TGS-4Y-VPQ"/>
+                    <constraint firstItem="osy-Bl-z93" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="TGS-4Y-VPQ"/>
                     <constraint firstItem="Gft-gJ-AGr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nSW-A1-ZQu"/>
                     <constraint firstItem="osy-Bl-z93" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ylx-gS-str"/>
                 </constraints>
