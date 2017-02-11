@@ -28,20 +28,31 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wab-iZ-ofS">
-                        <rect key="frame" x="90" y="11" width="222" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="90" y="10.5" width="222" height="22"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAC-tf-WtB" userLabel="SeparatorView">
+                        <rect key="frame" x="8" y="35" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.10000000000000001" id="7sv-fk-gWR"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="TAC-tf-WtB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="6IU-7q-JaN"/>
                     <constraint firstItem="Wab-iZ-ofS" firstAttribute="leading" secondItem="y7l-4x-tnW" secondAttribute="trailing" constant="15" id="91d-zq-x0r"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TAC-tf-WtB" secondAttribute="bottom" id="Cnt-Vb-ecJ"/>
                     <constraint firstItem="y7l-4x-tnW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" multiplier="5" constant="15" id="RQ2-C8-QTN"/>
                     <constraint firstItem="y7l-4x-tnW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aD6-QT-v3O"/>
                     <constraint firstItem="Wab-iZ-ofS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hy0-Uq-7ke"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Wab-iZ-ofS" secondAttribute="trailing" id="sbW-u0-Fya"/>
+                    <constraint firstItem="TAC-tf-WtB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ugK-ka-ET6"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="itemImageView" destination="y7l-4x-tnW" id="g1a-hm-hrW"/>
                 <outlet property="label" destination="Wab-iZ-ofS" id="o6F-JA-Xxj"/>

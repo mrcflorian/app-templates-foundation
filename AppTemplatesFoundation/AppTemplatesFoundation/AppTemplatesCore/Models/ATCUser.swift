@@ -8,21 +8,34 @@
 
 import ObjectMapper
 
-public class ATCUser: ATCBaseModel {
+open class ATCUser: ATCBaseModel {
 
     var username: String?
     var email: String?
     var firstName: String?
     var lastName: String?
+    var profilePictureURL: String?
+
+    public init(firstName: String, lastName: String, avatarURL: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        profilePictureURL = avatarURL
+    }
 
     public required init?(map: Map) {
 
     }
 
     public func mapping(map: Map) {
-        username      <- map["username"]
-        email         <- map["email"]
-        firstName     <- map["first_name"]
-        lastName      <- map["last_name"]
+        username            <- map["username"]
+        email               <- map["email"]
+        firstName           <- map["first_name"]
+        lastName            <- map["last_name"]
+        profilePictureURL   <- map["profile_picture"]
+    }
+
+    public func fullName() -> String? {
+        guard let firstName = firstName, let lastName = lastName else { return "" }
+        return "\(firstName) \(lastName)"
     }
 }

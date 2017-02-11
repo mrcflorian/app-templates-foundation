@@ -6,6 +6,7 @@
 //  Copyright © 2017 iOS App Templates. All rights reserved.
 //
 
+import Material
 import UIKit
 
 open class ATCMenuTableViewController: UITableViewController {
@@ -14,11 +15,11 @@ open class ATCMenuTableViewController: UITableViewController {
     fileprivate var lastSelectedIndexPath: IndexPath?
 
     var items: [ATCNavigationItem]
-    var avatarURL: String
+    var user: ATCUser?
 
-    init(items: [ATCNavigationItem], avatarURL: String, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    init(items: [ATCNavigationItem], user: ATCUser?, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.items = items
-        self.avatarURL = avatarURL
+        self.user = user
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         let cellNib = UINib(nibName: "ATCMenuTableViewCell", bundle: nil)
@@ -29,7 +30,7 @@ open class ATCMenuTableViewController: UITableViewController {
 
         lastSelectedIndexPath = IndexPath(row: 0, section: 0)
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -37,6 +38,10 @@ open class ATCMenuTableViewController: UITableViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(colorLiteralRed: 39/255, green: 44/255, blue: 48/255, alpha: 1)
+        tableView.backgroundView = backgroundView
+        tableView.separatorColor = Color.grey.darken1
     }
 
     // MARK: - Table view data source
@@ -72,14 +77,12 @@ open class ATCMenuTableViewController: UITableViewController {
 
     override open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ATCMenuHeaderTableViewCell") as? ATCMenuHeaderTableViewCell
-        cell?.configureCell(imageURLString: avatarURL)
+        cell?.configureCell(user: user)
         return cell
     }
 
     override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let totalHeight = tableView.height
-        let availableHeight = totalHeight - CGFloat(items.count) * 44
-        return availableHeight / 3.0
+        return 200
     }
 }
 
