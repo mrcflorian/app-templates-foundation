@@ -30,15 +30,17 @@ open class ATCHostViewController: UIViewController {
 
     let items: [ATCNavigationItem]
     let style: ATCNavigationStyle
+    let avatarURL: String
 
     open var tabController: UITabBarController?
     open var navigationToolbarController: ATCNavigationToolbarController?
     open var menuViewController: ATCMenuTableViewController?
     open var drawerController: ATCNavigationDrawerController?
 
-    init(style: ATCNavigationStyle, items: [ATCNavigationItem]) {
+    init(style: ATCNavigationStyle, items: [ATCNavigationItem], avatarURL: String = "") {
         self.style = style
         self.items = items
+        self.avatarURL = avatarURL
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -62,7 +64,7 @@ open class ATCHostViewController: UIViewController {
             guard let firstVC = items.first?.viewController else { return }
             navigationToolbarController = ATCNavigationToolbarController(rootViewController: firstVC)
             navigationToolbarController?.toolbar.title = items.first?.title
-            menuViewController = ATCMenuTableViewController(items: items, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
+            menuViewController = ATCMenuTableViewController(items: items, avatarURL: avatarURL, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
             drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
             self.view.addSubview(drawerController!.view)
         }

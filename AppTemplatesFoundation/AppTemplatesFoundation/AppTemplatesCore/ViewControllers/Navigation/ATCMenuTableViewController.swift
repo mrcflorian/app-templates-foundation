@@ -11,14 +11,23 @@ import UIKit
 open class ATCMenuTableViewController: UITableViewController {
     fileprivate static let kCellReuseIdentifier = "ATCMenuTableViewCell"
 
-    var items: [ATCNavigationItem]
+    fileprivate var lastSelectedIndexPath: IndexPath?
 
-    init(items: [ATCNavigationItem], nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    var items: [ATCNavigationItem]
+    var avatarURL: String
+
+    init(items: [ATCNavigationItem], avatarURL: String, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.items = items
+        self.avatarURL = avatarURL
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         let cellNib = UINib(nibName: "ATCMenuTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: ATCMenuTableViewController.kCellReuseIdentifier)
+
+        let headerNib = UINib(nibName: "ATCMenuHeaderTableViewCell", bundle:nil)
+        tableView.register(headerNib, forCellReuseIdentifier: "ATCMenuHeaderTableViewCell")
+
+        lastSelectedIndexPath = IndexPath(row: 0, section: 0)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -50,10 +59,27 @@ open class ATCMenuTableViewController: UITableViewController {
     }
 
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (lastSelectedIndexPath == indexPath) {
+            closeNavigationDrawer(result: true)
+            return
+        }
         let item = items[indexPath.row]
         let tController = toolbarController()
         tController?.toolbar.title = item.title
         tController?.transition(to: item.viewController, completion: closeNavigationDrawer)
+        lastSelectedIndexPath = indexPath
+    }
+
+    override open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ATCMenuHeaderTableViewCell") as? ATCMenuHeaderTableViewCell
+        cell?.configureCell(imageURLString: avatarURL)
+        return cell
+    }
+
+    override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let totalHeight = tableView.height
+        let availableHeight = totalHeight - CGFloat(items.count) * 44
+        return availableHeight / 3.0
     }
 }
 

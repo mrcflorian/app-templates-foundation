@@ -23,7 +23,8 @@ target 'AppTemplatesFoundation' do
   pod 'Firebase/Auth'
 
   pod 'Material', '~> 2.0'
-  
+  pod 'Kingfisher'
+
   # Pods for AppTemplatesFoundation
 
 end

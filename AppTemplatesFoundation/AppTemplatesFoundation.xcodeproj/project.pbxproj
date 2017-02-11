@@ -16,6 +16,8 @@
 		17A2060C1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */; };
 		17A2060D1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */; };
 		17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */; };
+		17A206121E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */; };
+		17A206131E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */; };
 		17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */; };
 		17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */; };
 		17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */; };
@@ -53,6 +55,8 @@
 		17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuTableViewCell.swift; path = Navigation/ATCMenuTableViewCell.swift; sourceTree = "<group>"; };
 		17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuTableViewCell.xib; path = Navigation/ATCMenuTableViewCell.xib; sourceTree = "<group>"; };
 		17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCNavigationToolbarController.swift; path = Navigation/ATCNavigationToolbarController.swift; sourceTree = "<group>"; };
+		17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuHeaderTableViewCell.swift; path = Navigation/ATCMenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuHeaderTableViewCell.xib; path = Navigation/ATCMenuHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWordpressPost.swift; sourceTree = "<group>"; };
 		17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookPost.swift; sourceTree = "<group>"; };
 		17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookUser.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */,
 				17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */,
 				17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */,
+				17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */,
+				17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			files = (
 				17CCC7181E46916800F41ACD /* LaunchScreen.storyboard in Resources */,
 				17AF811C1E495BE000F66FE8 /* ATCLoginViewController.xib in Resources */,
+				17A206131E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib in Resources */,
 				17CCC7151E46916800F41ACD /* Assets.xcassets in Resources */,
 				17A206071E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib in Resources */,
 				17CCC7131E46916800F41ACD /* Main.storyboard in Resources */,
@@ -401,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17A206121E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift in Sources */,
 				17AF81161E46A0AC00F66FE8 /* ATCRSSFeed.swift in Sources */,
 				17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */,
 				17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */,
