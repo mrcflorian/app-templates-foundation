@@ -32,13 +32,16 @@ open class ATCHostViewController: UIViewController {
     let style: ATCNavigationStyle
 
     open var tabController: UITabBarController?
+    open var navigationToolbarController: ATCNavigationToolbarController?
+    open var menuViewController: ATCMenuTableViewController?
+    open var drawerController: ATCNavigationDrawerController?
 
     init(style: ATCNavigationStyle, items: [ATCNavigationItem]) {
         self.style = style
         self.items = items
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,6 +58,13 @@ open class ATCHostViewController: UIViewController {
                 item.viewController.tabBarItem = UITabBarItem(title: item.title, image: item.image, tag: tag)
             }
             self.view.addSubview(tabController!.view)
+        } else {
+            guard let firstVC = items.first?.viewController else { return }
+            navigationToolbarController = ATCNavigationToolbarController(rootViewController: firstVC)
+            navigationToolbarController?.toolbar.title = items.first?.title
+            menuViewController = ATCMenuTableViewController(items: items, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
+            drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
+            self.view.addSubview(drawerController!.view)
         }
     }
 }

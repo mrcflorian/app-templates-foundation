@@ -10,6 +10,12 @@
 		17A205FC1E4C2E6E00CCC2C8 /* ATCHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A205FB1E4C2E6E00CCC2C8 /* ATCHostViewController.swift */; };
 		17A205FF1E4C3C1E00CCC2C8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A205FD1E4C3C1E00CCC2C8 /* FirstViewController.swift */; };
 		17A206001E4C3C1E00CCC2C8 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A205FE1E4C3C1E00CCC2C8 /* FirstViewController.xib */; };
+		17A206031E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206021E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift */; };
+		17A206061E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206041E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift */; };
+		17A206071E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A206051E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib */; };
+		17A2060C1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */; };
+		17A2060D1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */; };
+		17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */; };
 		17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */; };
 		17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */; };
 		17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */; };
@@ -41,6 +47,12 @@
 		17A205FB1E4C2E6E00CCC2C8 /* ATCHostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCHostViewController.swift; path = Navigation/ATCHostViewController.swift; sourceTree = "<group>"; };
 		17A205FD1E4C3C1E00CCC2C8 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		17A205FE1E4C3C1E00CCC2C8 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		17A206021E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCNavigationDrawerController.swift; path = Navigation/ATCNavigationDrawerController.swift; sourceTree = "<group>"; };
+		17A206041E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuTableViewController.swift; path = Navigation/ATCMenuTableViewController.swift; sourceTree = "<group>"; };
+		17A206051E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuTableViewController.xib; path = Navigation/ATCMenuTableViewController.xib; sourceTree = "<group>"; };
+		17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuTableViewCell.swift; path = Navigation/ATCMenuTableViewCell.swift; sourceTree = "<group>"; };
+		17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuTableViewCell.xib; path = Navigation/ATCMenuTableViewCell.xib; sourceTree = "<group>"; };
+		17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCNavigationToolbarController.swift; path = Navigation/ATCNavigationToolbarController.swift; sourceTree = "<group>"; };
 		17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWordpressPost.swift; sourceTree = "<group>"; };
 		17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookPost.swift; sourceTree = "<group>"; };
 		17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookUser.swift; sourceTree = "<group>"; };
@@ -88,6 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				17A205FB1E4C2E6E00CCC2C8 /* ATCHostViewController.swift */,
+				17A206021E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift */,
+				17A206041E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift */,
+				17A206051E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib */,
+				17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */,
+				17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */,
+				17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -318,11 +336,13 @@
 				17CCC7181E46916800F41ACD /* LaunchScreen.storyboard in Resources */,
 				17AF811C1E495BE000F66FE8 /* ATCLoginViewController.xib in Resources */,
 				17CCC7151E46916800F41ACD /* Assets.xcassets in Resources */,
+				17A206071E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib in Resources */,
 				17CCC7131E46916800F41ACD /* Main.storyboard in Resources */,
 				17AF81141E46958400F66FE8 /* A1TableViewController.xib in Resources */,
 				17AF811F1E495DF700F66FE8 /* Misc.xcassets in Resources */,
 				17AF81241E496CBE00F66FE8 /* GoogleService-Info.plist in Resources */,
 				17A206001E4C3C1E00CCC2C8 /* FirstViewController.xib in Resources */,
+				17A2060D1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,15 +403,18 @@
 			files = (
 				17AF81161E46A0AC00F66FE8 /* ATCRSSFeed.swift in Sources */,
 				17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */,
+				17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */,
 				17AF81281E4970C700F66FE8 /* ATCFirebaseLoginManager.swift in Sources */,
 				17A205FC1E4C2E6E00CCC2C8 /* ATCHostViewController.swift in Sources */,
 				17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */,
 				17AF811B1E495BE000F66FE8 /* ATCLoginViewController.swift in Sources */,
 				17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */,
+				17A206061E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift in Sources */,
 				17AF810E1E4694E400F66FE8 /* ATCFacebookAPIManager.swift in Sources */,
 				17AF810A1E4694DB00F66FE8 /* ATCTableViewController.swift in Sources */,
 				17AF81051E4694CD00F66FE8 /* ATCBaseModel.swift in Sources */,
 				17AF810F1E4694E400F66FE8 /* ATCAPIManager.swift in Sources */,
+				17A206031E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift in Sources */,
 				17A205FF1E4C3C1E00CCC2C8 /* FirstViewController.swift in Sources */,
 				17AF81131E46958400F66FE8 /* A1TableViewController.swift in Sources */,
 				17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */,
@@ -400,6 +423,7 @@
 				17AF81221E495F5500F66FE8 /* ATCViewControllerFactory.swift in Sources */,
 				17AF81181E495A8E00F66FE8 /* AppConfiguration.swift in Sources */,
 				17CCC70E1E46916800F41ACD /* AppDelegate.swift in Sources */,
+				17A2060C1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
