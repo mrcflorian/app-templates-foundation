@@ -18,6 +18,14 @@
 		17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */; };
 		17A206121E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */; };
 		17A206131E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */; };
+		17A206161E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206151E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift */; };
+		17A206181E4FB83E00CCC2C8 /* ATCSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206171E4FB83E00CCC2C8 /* ATCSettingsItem.swift */; };
+		17A2061B1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206191E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.swift */; };
+		17A2061C1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A2061A1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.xib */; };
+		17A2061F1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2061D1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.swift */; };
+		17A206201E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A2061E1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.xib */; };
+		17A206231E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206211E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.swift */; };
+		17A206241E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A206221E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.xib */; };
 		17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */; };
 		17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */; };
 		17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */; };
@@ -57,6 +65,14 @@
 		17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCNavigationToolbarController.swift; path = Navigation/ATCNavigationToolbarController.swift; sourceTree = "<group>"; };
 		17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuHeaderTableViewCell.swift; path = Navigation/ATCMenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuHeaderTableViewCell.xib; path = Navigation/ATCMenuHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		17A206151E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCSettingsTableViewController.swift; path = Settings/ATCSettingsTableViewController.swift; sourceTree = "<group>"; };
+		17A206171E4FB83E00CCC2C8 /* ATCSettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSettingsItem.swift; sourceTree = "<group>"; };
+		17A206191E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCSettingsToggleTableViewCell.swift; path = Settings/ATCSettingsToggleTableViewCell.swift; sourceTree = "<group>"; };
+		17A2061A1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCSettingsToggleTableViewCell.xib; path = Settings/ATCSettingsToggleTableViewCell.xib; sourceTree = "<group>"; };
+		17A2061D1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCSettingsTextTableViewCell.swift; path = Settings/ATCSettingsTextTableViewCell.swift; sourceTree = "<group>"; };
+		17A2061E1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCSettingsTextTableViewCell.xib; path = Settings/ATCSettingsTextTableViewCell.xib; sourceTree = "<group>"; };
+		17A206211E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCSettingsMoreTableViewCell.swift; path = Settings/ATCSettingsMoreTableViewCell.swift; sourceTree = "<group>"; };
+		17A206221E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCSettingsMoreTableViewCell.xib; path = Settings/ATCSettingsMoreTableViewCell.xib; sourceTree = "<group>"; };
 		17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWordpressPost.swift; sourceTree = "<group>"; };
 		17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookPost.swift; sourceTree = "<group>"; };
 		17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookUser.swift; sourceTree = "<group>"; };
@@ -125,6 +141,20 @@
 			path = TestVCs;
 			sourceTree = "<group>";
 		};
+		17A206141E4FB7E200CCC2C8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				17A206151E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift */,
+				17A206191E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.swift */,
+				17A2061A1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.xib */,
+				17A2061D1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.swift */,
+				17A2061E1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.xib */,
+				17A206211E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.swift */,
+				17A206221E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		17AF80E61E46931800F66FE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +195,7 @@
 				17AF81011E4694CD00F66FE8 /* ATCBaseModel.swift */,
 				17AF80E71E46933200F66FE8 /* ATCWordpressPost.swift */,
 				17AF81151E46A0AC00F66FE8 /* ATCRSSFeed.swift */,
+				17A206171E4FB83E00CCC2C8 /* ATCSettingsItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +203,7 @@
 		17AF80FB1E46946100F66FE8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				17A206141E4FB7E200CCC2C8 /* Settings */,
 				17A205FA1E4C2E0F00CCC2C8 /* Navigation */,
 				17AF81081E4694DB00F66FE8 /* ATCTableViewController.swift */,
 				17AF81191E495BE000F66FE8 /* ATCLoginViewController.swift */,
@@ -340,12 +372,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CCC7181E46916800F41ACD /* LaunchScreen.storyboard in Resources */,
+				17A2061C1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.xib in Resources */,
 				17AF811C1E495BE000F66FE8 /* ATCLoginViewController.xib in Resources */,
 				17A206131E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib in Resources */,
 				17CCC7151E46916800F41ACD /* Assets.xcassets in Resources */,
 				17A206071E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib in Resources */,
 				17CCC7131E46916800F41ACD /* Main.storyboard in Resources */,
 				17AF81141E46958400F66FE8 /* A1TableViewController.xib in Resources */,
+				17A206241E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.xib in Resources */,
+				17A206201E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.xib in Resources */,
 				17AF811F1E495DF700F66FE8 /* Misc.xcassets in Resources */,
 				17AF81241E496CBE00F66FE8 /* GoogleService-Info.plist in Resources */,
 				17A206001E4C3C1E00CCC2C8 /* FirstViewController.xib in Resources */,
@@ -409,13 +444,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				17A206121E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift in Sources */,
+				17A206231E4FBE2000CCC2C8 /* ATCSettingsMoreTableViewCell.swift in Sources */,
 				17AF81161E46A0AC00F66FE8 /* ATCRSSFeed.swift in Sources */,
+				17A206161E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift in Sources */,
 				17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */,
 				17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */,
 				17AF81281E4970C700F66FE8 /* ATCFirebaseLoginManager.swift in Sources */,
 				17A205FC1E4C2E6E00CCC2C8 /* ATCHostViewController.swift in Sources */,
 				17AF81031E4694CD00F66FE8 /* ATCFacebookUser.swift in Sources */,
 				17AF811B1E495BE000F66FE8 /* ATCLoginViewController.swift in Sources */,
+				17A2061B1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.swift in Sources */,
+				17A2061F1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.swift in Sources */,
 				17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */,
 				17A206061E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift in Sources */,
 				17AF810E1E4694E400F66FE8 /* ATCFacebookAPIManager.swift in Sources */,
@@ -424,6 +463,7 @@
 				17AF810F1E4694E400F66FE8 /* ATCAPIManager.swift in Sources */,
 				17A206031E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift in Sources */,
 				17A205FF1E4C3C1E00CCC2C8 /* FirstViewController.swift in Sources */,
+				17A206181E4FB83E00CCC2C8 /* ATCSettingsItem.swift in Sources */,
 				17AF81131E46958400F66FE8 /* A1TableViewController.swift in Sources */,
 				17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */,
 				17AF81041E4694CD00F66FE8 /* ATCUser.swift in Sources */,
