@@ -11,6 +11,7 @@ import FacebookCore
 import FacebookLogin
 import FacebookShare
 import Firebase
+import Stripe
 import TwitterKit
 import UIKit
 
@@ -26,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             if (AppConfiguration.isFirebaseIntegrationEnabled) {
                 FIRApp.configure()
+            }
+            if (AppConfiguration.isStripePaymentEnabled) {
+                STPPaymentConfiguration.shared().publishableKey = AppConfiguration.stripePublishableKey
+            }
+            if (AppConfiguration.isApplePaymentEnabled) {
+                STPPaymentConfiguration.shared().appleMerchantIdentifier = AppConfiguration.applePayMerchantIdentifier
             }
             if (AppConfiguration.isFacebookLoginEnabled) {
                 return SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)

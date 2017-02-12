@@ -71,7 +71,7 @@ open class ATCMenuTableViewController: UITableViewController {
         let item = items[indexPath.row]
         let dController = drawerController()
         let navigationController = ATCNavigationController(rootViewController: item.viewController)
-        dController?.transition(to: navigationController, completion: closeNavigationDrawer)
+        dController?.transition(to: navigationController, duration: 0.1, completion: closeNavigationDrawer)
         lastSelectedIndexPath = indexPath
     }
 

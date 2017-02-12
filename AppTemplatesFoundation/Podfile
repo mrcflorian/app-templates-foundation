@@ -22,6 +22,8 @@ target 'AppTemplatesFoundation' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
 
+  pod 'Stripe'
+
   pod 'Material', '~> 2.0'
   pod 'Kingfisher'
 
