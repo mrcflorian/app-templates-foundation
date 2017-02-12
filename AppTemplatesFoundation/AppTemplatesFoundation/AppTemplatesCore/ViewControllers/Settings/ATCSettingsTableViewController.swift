@@ -32,6 +32,7 @@ open class ATCSettingsTableViewController: UITableViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .white
     }
 
     // MARK: - Table view data source

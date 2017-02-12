@@ -33,7 +33,7 @@ open class ATCHostViewController: UIViewController {
     let user: ATCUser?
 
     open var tabController: UITabBarController?
-    open var navigationToolbarController: ATCNavigationToolbarController?
+    open var navigationToolbarController: ATCNavigationController?
     open var menuViewController: ATCMenuTableViewController?
     open var drawerController: ATCNavigationDrawerController?
 
@@ -62,8 +62,8 @@ open class ATCHostViewController: UIViewController {
             self.view.addSubview(tabController!.view)
         } else {
             guard let firstVC = items.first?.viewController else { return }
-            navigationToolbarController = ATCNavigationToolbarController(rootViewController: firstVC)
-            navigationToolbarController?.toolbar.title = items.first?.title
+            navigationToolbarController = ATCNavigationController(rootViewController: firstVC)
+            //navigationToolbarController?.toolbar.title = items.first?.title
             menuViewController = ATCMenuTableViewController(items: items, user: user, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
             drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
             self.view.addSubview(drawerController!.view)

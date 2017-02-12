@@ -69,9 +69,9 @@ open class ATCMenuTableViewController: UITableViewController {
             return
         }
         let item = items[indexPath.row]
-        let tController = toolbarController()
-        tController?.toolbar.title = item.title
-        tController?.transition(to: item.viewController, completion: closeNavigationDrawer)
+        let dController = drawerController()
+        let navigationController = ATCNavigationController(rootViewController: item.viewController)
+        dController?.transition(to: navigationController, completion: closeNavigationDrawer)
         lastSelectedIndexPath = indexPath
     }
 
@@ -91,7 +91,7 @@ extension ATCMenuTableViewController {
         navigationDrawerController?.closeLeftView()
     }
 
-    fileprivate func toolbarController() -> ATCNavigationToolbarController? {
-        return (navigationDrawerController?.rootViewController as? ATCNavigationToolbarController)
+    fileprivate func drawerController() -> ATCNavigationDrawerController? {
+        return (navigationDrawerController?.rootViewController.parent as? ATCNavigationDrawerController)
     }
 }
