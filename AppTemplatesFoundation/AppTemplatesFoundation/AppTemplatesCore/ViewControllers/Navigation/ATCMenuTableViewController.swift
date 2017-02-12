@@ -82,7 +82,9 @@ open class ATCMenuTableViewController: UITableViewController {
     }
 
     override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 200
+        let totalHeight = self.tableView.bounds.height
+        let availableHeight = totalHeight - CGFloat(items.count) * 40
+        return min(200, availableHeight)
     }
 }
 
