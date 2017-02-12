@@ -59,7 +59,7 @@ class ATCStripeCheckoutViewController: UIViewController, STPPaymentContextDelega
         }
     }
 
-    init(product: String, price: Int, settings: ATCStripeSettings) {
+    init(product: String = "", price: Int, settings: ATCStripeSettings) {
 
         let stripePublishableKey = self.stripePublishableKey
         let backendBaseURL = self.backendBaseURL

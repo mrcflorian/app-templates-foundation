@@ -44,7 +44,8 @@ class ViewController: UIViewController {
 
         let stripeSettingsVC = ATCStripeSettingsViewController()
 
-        let stripeVC = ATCStripeCheckoutViewController(product: "Purchase", price: 69, settings: stripeSettingsVC.settings)
+        let stripeVC = ATCStripeCheckoutViewController(price: 69, settings: stripeSettingsVC.settings)
+        stripeVC.title = "Checkout"
         let stripeItem = ATCNavigationItem(title: "Checkout", viewController: stripeVC, image: UIImage(named: "shopping-cart-icon"))
 
         let items = [item1, item3, stripeItem, item2]
