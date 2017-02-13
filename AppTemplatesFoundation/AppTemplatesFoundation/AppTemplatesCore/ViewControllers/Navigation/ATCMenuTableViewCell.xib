@@ -21,14 +21,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7l-4x-tnW">
-                        <rect key="frame" x="55" y="11.5" width="20" height="20"/>
+                        <rect key="frame" x="55" y="13" width="17" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="CR0-aJ-KAY"/>
-                            <constraint firstAttribute="width" constant="20" id="Gr4-AI-oud"/>
+                            <constraint firstAttribute="height" constant="17" id="CR0-aJ-KAY"/>
+                            <constraint firstAttribute="width" constant="17" id="Gr4-AI-oud"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wab-iZ-ofS">
-                        <rect key="frame" x="90" y="13" width="222" height="22"/>
+                        <rect key="frame" x="82" y="13" width="230" height="22"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="TAC-tf-WtB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="6IU-7q-JaN"/>
-                    <constraint firstItem="Wab-iZ-ofS" firstAttribute="leading" secondItem="y7l-4x-tnW" secondAttribute="trailing" constant="15" id="91d-zq-x0r"/>
+                    <constraint firstItem="Wab-iZ-ofS" firstAttribute="leading" secondItem="y7l-4x-tnW" secondAttribute="trailing" constant="10" id="91d-zq-x0r"/>
                     <constraint firstAttribute="bottomMargin" secondItem="TAC-tf-WtB" secondAttribute="bottom" id="Cnt-Vb-ecJ"/>
                     <constraint firstItem="y7l-4x-tnW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" multiplier="5" constant="15" id="RQ2-C8-QTN"/>
                     <constraint firstItem="y7l-4x-tnW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aD6-QT-v3O"/>
