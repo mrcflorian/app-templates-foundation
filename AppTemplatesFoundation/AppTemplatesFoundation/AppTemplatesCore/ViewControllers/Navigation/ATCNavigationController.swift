@@ -11,6 +11,21 @@ import UIKit
 
 open class ATCNavigationController: NavigationController, UINavigationControllerDelegate {
     fileprivate var menuButton: IconButton!
+    fileprivate var topNavigationRightViews: [UIView] = [UIView]()
+
+    public init(rootViewController: UIViewController, topNavigationRightViews: [UIView]) {
+        super.init(rootViewController: rootViewController)
+        self.topNavigationRightViews = topNavigationRightViews
+    }
+
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override open func prepare() {
         super.prepare()
         prepareMenuButton()
@@ -21,6 +36,7 @@ open class ATCNavigationController: NavigationController, UINavigationController
         super.viewDidLoad()
         self.delegate = self
         topViewController?.navigationItem.leftViews = [menuButton]
+        topViewController?.navigationItem.rightViews = topNavigationRightViews
     }
 
     open func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {

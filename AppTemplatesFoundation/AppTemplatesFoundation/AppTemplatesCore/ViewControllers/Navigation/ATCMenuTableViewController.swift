@@ -13,13 +13,15 @@ open class ATCMenuTableViewController: UITableViewController {
     fileprivate static let kCellReuseIdentifier = "ATCMenuTableViewCell"
 
     fileprivate var lastSelectedIndexPath: IndexPath?
+    fileprivate var topNavigationRightViews: [UIView] = [UIView]()
 
     var items: [ATCNavigationItem]
     var user: ATCUser?
 
-    init(items: [ATCNavigationItem], user: ATCUser?, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    init(items: [ATCNavigationItem], user: ATCUser?, topNavigationRightViews: [UIView] = [UIView](), nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.items = items
         self.user = user
+        self.topNavigationRightViews = topNavigationRightViews
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         let cellNib = UINib(nibName: "ATCMenuTableViewCell", bundle: nil)
@@ -70,7 +72,7 @@ open class ATCMenuTableViewController: UITableViewController {
         }
         let item = items[indexPath.row]
         let dController = drawerController()
-        let navigationController = ATCNavigationController(rootViewController: item.viewController)
+        let navigationController = ATCNavigationController(rootViewController: item.viewController, topNavigationRightViews: topNavigationRightViews)
         dController?.transition(to: navigationController, duration: 0.1, completion: closeNavigationDrawer)
         lastSelectedIndexPath = indexPath
     }
@@ -85,6 +87,14 @@ open class ATCMenuTableViewController: UITableViewController {
         let totalHeight = self.tableView.bounds.height
         let availableHeight = totalHeight - CGFloat(items.count) * 40
         return min(200, availableHeight)
+    }
+}
+
+// MARK: - Public API
+extension ATCMenuTableViewController {
+    public func selectMenuItemAtIndexPath(indexPath: IndexPath) {
+        self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        self.tableView(self.tableView, didSelectRowAt: indexPath)
     }
 }
 

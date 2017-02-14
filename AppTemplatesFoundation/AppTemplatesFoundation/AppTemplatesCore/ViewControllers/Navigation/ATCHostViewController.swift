@@ -31,16 +31,18 @@ open class ATCHostViewController: UIViewController {
     let items: [ATCNavigationItem]
     let style: ATCNavigationStyle
     let user: ATCUser?
+    let topNavigationRightViews: [UIView]
 
     open var tabController: UITabBarController?
     open var navigationToolbarController: ATCNavigationController?
     open var menuViewController: ATCMenuTableViewController?
     open var drawerController: ATCNavigationDrawerController?
 
-    init(style: ATCNavigationStyle, items: [ATCNavigationItem], user: ATCUser? = nil) {
+    init(style: ATCNavigationStyle, items: [ATCNavigationItem], user: ATCUser? = nil, topNavigationRightViews: [UIView] = [UIView]()) {
         self.style = style
         self.items = items
         self.user = user
+        self.topNavigationRightViews = topNavigationRightViews
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -62,9 +64,8 @@ open class ATCHostViewController: UIViewController {
             self.view.addSubview(tabController!.view)
         } else {
             guard let firstVC = items.first?.viewController else { return }
-            navigationToolbarController = ATCNavigationController(rootViewController: firstVC)
-            //navigationToolbarController?.toolbar.title = items.first?.title
-            menuViewController = ATCMenuTableViewController(items: items, user: user, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
+            navigationToolbarController = ATCNavigationController(rootViewController: firstVC, topNavigationRightViews: topNavigationRightViews)
+            menuViewController = ATCMenuTableViewController(items: items, user: user, topNavigationRightViews: topNavigationRightViews, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
             drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
             self.view.addSubview(drawerController!.view)
         }
