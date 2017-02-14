@@ -65,7 +65,7 @@ open class ATCHostViewController: UIViewController {
         } else {
             guard let firstVC = items.first?.viewController else { return }
             navigationToolbarController = ATCNavigationController(rootViewController: firstVC, topNavigationRightViews: topNavigationRightViews)
-            menuViewController = ATCMenuTableViewController(items: items, user: user, topNavigationRightViews: topNavigationRightViews, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
+            menuViewController = ATCMenuTableViewController(items: items, user: user, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
             drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
             self.view.addSubview(drawerController!.view)
         }

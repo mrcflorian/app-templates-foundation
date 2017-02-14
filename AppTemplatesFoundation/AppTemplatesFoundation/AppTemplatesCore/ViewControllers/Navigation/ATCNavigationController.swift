@@ -35,8 +35,6 @@ open class ATCNavigationController: NavigationController, UINavigationController
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        topViewController?.navigationItem.leftViews = [menuButton]
-        topViewController?.navigationItem.rightViews = topNavigationRightViews
     }
 
     open func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
@@ -59,6 +57,11 @@ extension ATCNavigationController {
 
     fileprivate func prepareNavigationBar() {
         topViewController?.navigationItem.title = topViewController?.title
+        if self.viewControllers.count <= 1 {
+            topViewController?.navigationItem.leftViews = [menuButton]
+            topViewController?.navigationItem.rightViews = topNavigationRightViews
+            topViewController?.navigationItem.leftItemsSupplementBackButton = true
+        }
     }
 }
 

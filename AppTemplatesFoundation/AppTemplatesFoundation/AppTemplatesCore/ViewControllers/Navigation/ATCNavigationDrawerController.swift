@@ -17,6 +17,10 @@ open class ATCNavigationDrawerController: NavigationDrawerController {
         delegate = self
         Application.statusBarStyle = .default
     }
+
+    open func atcNavigationController() -> ATCNavigationController? {
+        return rootViewController as? ATCNavigationController
+    }
 }
 
 extension ATCNavigationDrawerController: NavigationDrawerControllerDelegate {

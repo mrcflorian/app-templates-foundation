@@ -13,15 +13,13 @@ open class ATCMenuTableViewController: UITableViewController {
     fileprivate static let kCellReuseIdentifier = "ATCMenuTableViewCell"
 
     fileprivate var lastSelectedIndexPath: IndexPath?
-    fileprivate var topNavigationRightViews: [UIView] = [UIView]()
 
     var items: [ATCNavigationItem]
     var user: ATCUser?
 
-    init(items: [ATCNavigationItem], user: ATCUser?, topNavigationRightViews: [UIView] = [UIView](), nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    init(items: [ATCNavigationItem], user: ATCUser?, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.items = items
         self.user = user
-        self.topNavigationRightViews = topNavigationRightViews
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         let cellNib = UINib(nibName: "ATCMenuTableViewCell", bundle: nil)
@@ -67,14 +65,16 @@ open class ATCMenuTableViewController: UITableViewController {
 
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (lastSelectedIndexPath == indexPath) {
-            closeNavigationDrawer(result: true)
+            closeNavigationDrawer()
             return
         }
-        let item = items[indexPath.row]
         let dController = drawerController()
-        let navigationController = ATCNavigationController(rootViewController: item.viewController, topNavigationRightViews: topNavigationRightViews)
-        dController?.transition(to: navigationController, duration: 0.1, completion: closeNavigationDrawer)
-        lastSelectedIndexPath = indexPath
+        if let navigationController = dController?.atcNavigationController() {
+            let item = items[indexPath.row]
+            navigationController.setViewControllers([item.viewController], animated: false)
+            closeNavigationDrawer()
+            lastSelectedIndexPath = indexPath
+        }
     }
 
     override open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -99,7 +99,7 @@ extension ATCMenuTableViewController {
 }
 
 extension ATCMenuTableViewController {
-    fileprivate func closeNavigationDrawer(result: Bool) {
+    fileprivate func closeNavigationDrawer() {
         navigationDrawerController?.closeLeftView()
     }
 
