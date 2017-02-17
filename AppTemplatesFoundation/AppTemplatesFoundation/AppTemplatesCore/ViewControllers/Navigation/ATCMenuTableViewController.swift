@@ -71,9 +71,15 @@ open class ATCMenuTableViewController: UITableViewController {
         let dController = drawerController()
         if let navigationController = dController?.atcNavigationController() {
             let item = items[indexPath.row]
-            navigationController.setViewControllers([item.viewController], animated: false)
-            closeNavigationDrawer()
-            lastSelectedIndexPath = indexPath
+            if (item.type == .viewController) {
+                navigationController.setViewControllers([item.viewController], animated: false)
+                closeNavigationDrawer()
+                lastSelectedIndexPath = indexPath
+            } else if (item.type == .logout) {
+                if let hostVC = dController?.parent {
+                    hostVC.dismiss(animated: true, completion: nil)
+                }
+            }
         }
     }
 

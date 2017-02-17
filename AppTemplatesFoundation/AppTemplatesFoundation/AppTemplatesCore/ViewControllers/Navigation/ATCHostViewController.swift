@@ -14,15 +14,22 @@ public enum ATCNavigationStyle {
     case sideBar
 }
 
+public enum ATCNavigationMenuItemType {
+    case viewController
+    case logout
+}
+
 public final class ATCNavigationItem {
     let viewController: UIViewController
     let title: String
     let image: UIImage?
+    let type: ATCNavigationMenuItemType
 
-    init(title: String, viewController: UIViewController, image: UIImage?) {
+    init(title: String, viewController: UIViewController, image: UIImage?, type: ATCNavigationMenuItemType) {
         self.title = title
         self.viewController = viewController
         self.image = image
+        self.type = type
     }
 }
 
@@ -72,6 +79,9 @@ open class ATCHostViewController: UIViewController {
             navigationToolbarController = ATCNavigationController(rootViewController: firstVC, topNavigationRightViews: topNavigationRightViews)
             menuViewController = ATCMenuTableViewController(items: items, user: user, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
             drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
+            if let drawerController = drawerController {
+                self.addChildViewController(drawerController)
+            }
             self.view.addSubview(drawerController!.view)
         }
     }
