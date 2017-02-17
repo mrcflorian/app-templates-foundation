@@ -125,7 +125,7 @@ class ATCLoginViewController: UIViewController {
                     let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
                     ATCFirebaseLoginManager.login(credential: credential, completionBlock: self.didCompleteLogin)
                 } else {
-                    self.didLogin(firstName: session.userName)
+                    self.didLogin(firstName: "@" + session.userName)
                 }
             } else {
                 print("error: \(error?.localizedDescription)");
