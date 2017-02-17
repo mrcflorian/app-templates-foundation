@@ -67,7 +67,7 @@ open class ATCHostViewController: UIViewController {
 
         // Set root view controller
         if (style == .tabBar) {
-            let navigationControllers = items.map { UINavigationController(rootViewController: $0.viewController) }
+            let navigationControllers = items.filter{$0.type == .viewController}.map { UINavigationController(rootViewController: $0.viewController) }
             tabController = UITabBarController()
             tabController?.setViewControllers(navigationControllers, animated: true)
             for (tag, item) in items.enumerated() {
