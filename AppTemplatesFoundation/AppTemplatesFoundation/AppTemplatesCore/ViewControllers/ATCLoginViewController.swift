@@ -29,6 +29,7 @@ let kFacebookLoginButtonCornerRadius: CGFloat = 13.0
 class ATCLoginViewController: UIViewController {
 
     fileprivate var firebaseEnabled = false
+    fileprivate var loggedInViewController: ATCHostViewController? = nil
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
@@ -40,9 +41,10 @@ class ATCLoginViewController: UIViewController {
     // Remove permissions you don't need
     private let readPermissions: [ReadPermission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, firebaseEnabled: Bool) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, firebaseEnabled: Bool, loggedInViewController: ATCHostViewController) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.firebaseEnabled = firebaseEnabled
+        self.loggedInViewController = loggedInViewController
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -101,9 +103,9 @@ class ATCLoginViewController: UIViewController {
             return
         }
         if (firebaseEnabled) {
-            ATCFirebaseLoginManager.signIn(email: email, pass: pass)
+            ATCFirebaseLoginManager.signIn(email: email, pass: pass, completionBlock: self.didCompleteLogin)
         } else {
-            didLogin(method: "email and password", info: "Email: \(email) \n Password: \(pass)")
+            didLogin(firstName: email, email: email)
         }
     }
 
@@ -121,10 +123,9 @@ class ATCLoginViewController: UIViewController {
                 // Successful log in with Twitter
                 if (self.firebaseEnabled) {
                     let credential = FIRTwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
-                    ATCFirebaseLoginManager.login(credential: credential)
+                    ATCFirebaseLoginManager.login(credential: credential, completionBlock: self.didCompleteLogin)
                 } else {
-                    let info = "Username: \(session.userName) \n User ID: \(session.userID)"
-                    self.didLogin(method: "Twitter", info: info)
+                    self.didLogin(firstName: session.userName)
                 }
             } else {
                 print("error: \(error?.localizedDescription)");
@@ -146,25 +147,28 @@ class ATCLoginViewController: UIViewController {
         if let accessToken = AccessToken.current {
             let facebookAPIManager = ATCFacebookAPIManager(accessToken: accessToken)
             facebookAPIManager.requestFacebookUser(completion: { (facebookUser) in
-                if let email = facebookUser?.email,
-                    let firstName = facebookUser?.firstName,
-                    let lastName = facebookUser?.lastName {
+                if let firstName = facebookUser?.firstName,
+                    let lastName = facebookUser?.lastName,
+                    let email = facebookUser?.email {
                     if (self.firebaseEnabled) {
                         let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-                        ATCFirebaseLoginManager.login(credential: credential)
+                        ATCFirebaseLoginManager.login(credential: credential, completionBlock: self.didCompleteLogin)
                     } else {
-                        let info = "First name: \(firstName) \n Last name: \(lastName) \n Email: \(email)"
-                        self.didLogin(method: "Facebook", info: info)
+                        self.didLogin(firstName: firstName, lastName: lastName, email: email, avatarURL: facebookUser?.profilePicture ?? "")
                     }
                 }
             })
         }
     }
 
-    fileprivate func didLogin(method: String, info: String) {
-        let message = "Successfully logged in with \(method). " + info
-        let alert = UIAlertController(title: "Success", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    fileprivate func didLogin(firstName: String = "", lastName: String = "", email: String = "", avatarURL: String = "") {
+        let user = ATCUser(firstName: firstName, lastName: lastName, avatarURL: avatarURL)
+        self.didCompleteLogin(user: user)
+    }
+
+    fileprivate func didCompleteLogin(user: ATCUser?) {
+        guard let loggedInViewController = loggedInViewController else { return }
+        loggedInViewController.user = user
+        self.present(loggedInViewController, animated: true, completion: nil)
     }
 }

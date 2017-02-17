@@ -27,10 +27,15 @@ public final class ATCNavigationItem {
 }
 
 open class ATCHostViewController: UIViewController {
+    var user: ATCUser? {
+        didSet {
+            menuViewController?.user = user
+            menuViewController?.tableView.reloadData()
+        }
+    }
 
     let items: [ATCNavigationItem]
     let style: ATCNavigationStyle
-    let user: ATCUser?
     let topNavigationRightViews: [UIView]
 
     open var tabController: UITabBarController?

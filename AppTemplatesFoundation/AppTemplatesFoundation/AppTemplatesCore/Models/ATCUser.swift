@@ -10,15 +10,18 @@ import ObjectMapper
 
 open class ATCUser: ATCBaseModel {
 
+    var uid: String?
     var username: String?
     var email: String?
     var firstName: String?
     var lastName: String?
     var profilePictureURL: String?
 
-    public init(firstName: String, lastName: String, avatarURL: String) {
+    public init(uid: String = "", firstName: String, lastName: String, avatarURL: String = "", email: String = "") {
         self.firstName = firstName
         self.lastName = lastName
+        self.uid = uid
+        self.email = email
         profilePictureURL = avatarURL
     }
 
