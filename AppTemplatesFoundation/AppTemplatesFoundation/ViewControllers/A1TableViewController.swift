@@ -76,14 +76,4 @@ class A1TableViewController: ATCCollectionViewController<ATCWordpressPost> {
     override func urlEndpointPath() -> String {
         return "http://iosapptemplates.com/feed/"
     }
-
-    override func extraParameters() -> [String: String] {
-        return [:]
-    }
-
-    override func apiResponseType() -> ATCViewControllerAPIResponseType {
-        return .rss
-    }
-
-    
 }

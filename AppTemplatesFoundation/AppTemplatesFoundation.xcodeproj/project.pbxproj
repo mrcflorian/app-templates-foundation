@@ -56,8 +56,11 @@
 		17CCC7181E46916800F41ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC7161E46916800F41ACD /* LaunchScreen.storyboard */; };
 		17D350141E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350131E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift */; };
 		17D350161E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350151E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift */; };
-		17D350181E889D0500B8B661 /* ATCViewControllerContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350171E889D0500B8B661 /* ATCViewControllerContextProvider.swift */; };
 		17D3501A1E889D2A00B8B661 /* ATCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350191E889D2A00B8B661 /* ATCCollectionViewController.swift */; };
+		17D350831E88D37100B8B661 /* ATCWordpressPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350801E88D37100B8B661 /* ATCWordpressPostCollectionViewController.swift */; };
+		17D350841E88D37100B8B661 /* ATCRSSFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350811E88D37100B8B661 /* ATCRSSFeedCollectionViewController.swift */; };
+		17D350851E88D37100B8B661 /* ATCViewControllerRemoteHostContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350821E88D37100B8B661 /* ATCViewControllerRemoteHostContextProvider.swift */; };
+		17D350871E88D39300B8B661 /* ATCRSSItemBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350861E88D39300B8B661 /* ATCRSSItemBaseModel.swift */; };
 		BD97F06E7354E611087934A7 /* Pods_AppTemplatesFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAE5B0EC928D6A22664DE8B /* Pods_AppTemplatesFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,8 +116,11 @@
 		17CCC7191E46916800F41ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D350131E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCLiquidCollectionViewLayout.swift; path = ViewControllers/Layouts/ATCLiquidCollectionViewLayout.swift; sourceTree = "<group>"; };
 		17D350151E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLiquidCollectionViewController.swift; sourceTree = "<group>"; };
-		17D350171E889D0500B8B661 /* ATCViewControllerContextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContextProvider.swift; sourceTree = "<group>"; };
 		17D350191E889D2A00B8B661 /* ATCCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCollectionViewController.swift; sourceTree = "<group>"; };
+		17D350801E88D37100B8B661 /* ATCWordpressPostCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWordpressPostCollectionViewController.swift; sourceTree = "<group>"; };
+		17D350811E88D37100B8B661 /* ATCRSSFeedCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCRSSFeedCollectionViewController.swift; sourceTree = "<group>"; };
+		17D350821E88D37100B8B661 /* ATCViewControllerRemoteHostContextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerRemoteHostContextProvider.swift; sourceTree = "<group>"; };
+		17D350861E88D39300B8B661 /* ATCRSSItemBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCRSSItemBaseModel.swift; sourceTree = "<group>"; };
 		3AAF298B77515EDADC817CF1 /* Pods-AppTemplatesFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplatesFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplatesFoundation/Pods-AppTemplatesFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		AEAE5B0EC928D6A22664DE8B /* Pods_AppTemplatesFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTemplatesFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72B6020BABE8B3BC1B63B56 /* Pods-AppTemplatesFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplatesFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplatesFoundation/Pods-AppTemplatesFoundation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 		17AF80FA1E46945B00F66FE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17D350861E88D39300B8B661 /* ATCRSSItemBaseModel.swift */,
 				17AF80FE1E4694CD00F66FE8 /* ATCFacebookPost.swift */,
 				17AF80FF1E4694CD00F66FE8 /* ATCFacebookUser.swift */,
 				17AF81001E4694CD00F66FE8 /* ATCUser.swift */,
@@ -238,8 +245,10 @@
 				17AF81191E495BE000F66FE8 /* ATCLoginViewController.swift */,
 				17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */,
 				17D350151E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift */,
-				17D350171E889D0500B8B661 /* ATCViewControllerContextProvider.swift */,
 				17D350191E889D2A00B8B661 /* ATCCollectionViewController.swift */,
+				17D350801E88D37100B8B661 /* ATCWordpressPostCollectionViewController.swift */,
+				17D350811E88D37100B8B661 /* ATCRSSFeedCollectionViewController.swift */,
+				17D350821E88D37100B8B661 /* ATCViewControllerRemoteHostContextProvider.swift */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
@@ -499,11 +508,13 @@
 				17A2061B1E4FBB8B00CCC2C8 /* ATCSettingsToggleTableViewCell.swift in Sources */,
 				17A2061F1E4FBD6800CCC2C8 /* ATCSettingsTextTableViewCell.swift in Sources */,
 				17AF81021E4694CD00F66FE8 /* ATCFacebookPost.swift in Sources */,
+				17D350871E88D39300B8B661 /* ATCRSSItemBaseModel.swift in Sources */,
 				17A2062F1E5002ED00CCC2C8 /* ATCStripeSettingsViewController.swift in Sources */,
 				17A206061E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift in Sources */,
 				17AF810E1E4694E400F66FE8 /* ATCFacebookAPIManager.swift in Sources */,
 				17AF81051E4694CD00F66FE8 /* ATCBaseModel.swift in Sources */,
 				17AF810F1E4694E400F66FE8 /* ATCAPIManager.swift in Sources */,
+				17D350851E88D37100B8B661 /* ATCViewControllerRemoteHostContextProvider.swift in Sources */,
 				17A206261E4FE98200CCC2C8 /* ATCNavigationController.swift in Sources */,
 				17A206031E4EB85100CCC2C8 /* ATCNavigationDrawerController.swift in Sources */,
 				17A205FF1E4C3C1E00CCC2C8 /* FirstViewController.swift in Sources */,
@@ -517,10 +528,11 @@
 				17AF81221E495F5500F66FE8 /* ATCViewControllerFactory.swift in Sources */,
 				17AF81181E495A8E00F66FE8 /* AppConfiguration.swift in Sources */,
 				17D350141E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift in Sources */,
-				17D350181E889D0500B8B661 /* ATCViewControllerContextProvider.swift in Sources */,
 				17CCC70E1E46916800F41ACD /* AppDelegate.swift in Sources */,
 				17A2060C1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift in Sources */,
+				17D350841E88D37100B8B661 /* ATCRSSFeedCollectionViewController.swift in Sources */,
 				17A2062D1E50026900CCC2C8 /* ATCStripeButtons.swift in Sources */,
+				17D350831E88D37100B8B661 /* ATCWordpressPostCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
