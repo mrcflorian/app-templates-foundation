@@ -8,7 +8,7 @@
 
 import UIKit
 
-class A1TableViewController: ATCTableViewController<ATCWordpressPost> {
+class A1TableViewController: ATCCollectionViewController<ATCWordpressPost> {
 
     override func viewDidLoad() {
         super.viewDidLoad()

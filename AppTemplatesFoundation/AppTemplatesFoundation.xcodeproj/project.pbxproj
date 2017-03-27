@@ -15,7 +15,6 @@
 		17A206071E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A206051E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib */; };
 		17A2060C1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */; };
 		17A2060D1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */; };
-		17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */; };
 		17A206121E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */; };
 		17A206131E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */; };
 		17A206161E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A206151E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift */; };
@@ -38,7 +37,6 @@
 		17AF81041E4694CD00F66FE8 /* ATCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81001E4694CD00F66FE8 /* ATCUser.swift */; };
 		17AF81051E4694CD00F66FE8 /* ATCBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81011E4694CD00F66FE8 /* ATCBaseModel.swift */; };
 		17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81061E4694D300F66FE8 /* ATCNetworkingManager.swift */; };
-		17AF810A1E4694DB00F66FE8 /* ATCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81081E4694DB00F66FE8 /* ATCTableViewController.swift */; };
 		17AF810E1E4694E400F66FE8 /* ATCFacebookAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF810C1E4694E400F66FE8 /* ATCFacebookAPIManager.swift */; };
 		17AF810F1E4694E400F66FE8 /* ATCAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF810D1E4694E400F66FE8 /* ATCAPIManager.swift */; };
 		17AF81131E46958400F66FE8 /* A1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AF81111E46958400F66FE8 /* A1TableViewController.swift */; };
@@ -56,6 +54,10 @@
 		17CCC7131E46916800F41ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC7111E46916800F41ACD /* Main.storyboard */; };
 		17CCC7151E46916800F41ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC7141E46916800F41ACD /* Assets.xcassets */; };
 		17CCC7181E46916800F41ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC7161E46916800F41ACD /* LaunchScreen.storyboard */; };
+		17D350141E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350131E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift */; };
+		17D350161E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350151E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift */; };
+		17D350181E889D0500B8B661 /* ATCViewControllerContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350171E889D0500B8B661 /* ATCViewControllerContextProvider.swift */; };
+		17D3501A1E889D2A00B8B661 /* ATCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D350191E889D2A00B8B661 /* ATCCollectionViewController.swift */; };
 		BD97F06E7354E611087934A7 /* Pods_AppTemplatesFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAE5B0EC928D6A22664DE8B /* Pods_AppTemplatesFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +70,6 @@
 		17A206051E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuTableViewController.xib; path = Navigation/ATCMenuTableViewController.xib; sourceTree = "<group>"; };
 		17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuTableViewCell.swift; path = Navigation/ATCMenuTableViewCell.swift; sourceTree = "<group>"; };
 		17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuTableViewCell.xib; path = Navigation/ATCMenuTableViewCell.xib; sourceTree = "<group>"; };
-		17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCNavigationToolbarController.swift; path = Navigation/ATCNavigationToolbarController.swift; sourceTree = "<group>"; };
 		17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCMenuHeaderTableViewCell.swift; path = Navigation/ATCMenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ATCMenuHeaderTableViewCell.xib; path = Navigation/ATCMenuHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		17A206151E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCSettingsTableViewController.swift; path = Settings/ATCSettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		17AF81001E4694CD00F66FE8 /* ATCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUser.swift; sourceTree = "<group>"; };
 		17AF81011E4694CD00F66FE8 /* ATCBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCBaseModel.swift; sourceTree = "<group>"; };
 		17AF81061E4694D300F66FE8 /* ATCNetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCNetworkingManager.swift; sourceTree = "<group>"; };
-		17AF81081E4694DB00F66FE8 /* ATCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCTableViewController.swift; sourceTree = "<group>"; };
 		17AF810C1E4694E400F66FE8 /* ATCFacebookAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookAPIManager.swift; sourceTree = "<group>"; };
 		17AF810D1E4694E400F66FE8 /* ATCAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCAPIManager.swift; sourceTree = "<group>"; };
 		17AF81111E46958400F66FE8 /* A1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = A1TableViewController.swift; path = ViewControllers/A1TableViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +111,10 @@
 		17CCC7141E46916800F41ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17CCC7171E46916800F41ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17CCC7191E46916800F41ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D350131E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ATCLiquidCollectionViewLayout.swift; path = ViewControllers/Layouts/ATCLiquidCollectionViewLayout.swift; sourceTree = "<group>"; };
+		17D350151E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLiquidCollectionViewController.swift; sourceTree = "<group>"; };
+		17D350171E889D0500B8B661 /* ATCViewControllerContextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContextProvider.swift; sourceTree = "<group>"; };
+		17D350191E889D2A00B8B661 /* ATCCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCollectionViewController.swift; sourceTree = "<group>"; };
 		3AAF298B77515EDADC817CF1 /* Pods-AppTemplatesFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplatesFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplatesFoundation/Pods-AppTemplatesFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		AEAE5B0EC928D6A22664DE8B /* Pods_AppTemplatesFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTemplatesFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72B6020BABE8B3BC1B63B56 /* Pods-AppTemplatesFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplatesFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplatesFoundation/Pods-AppTemplatesFoundation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +141,6 @@
 				17A206051E4EB9B000CCC2C8 /* ATCMenuTableViewController.xib */,
 				17A2060A1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift */,
 				17A2060B1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.xib */,
-				17A2060E1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift */,
 				17A206101E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.swift */,
 				17A206111E4F97ED00CCC2C8 /* ATCMenuHeaderTableViewCell.xib */,
 				17A206251E4FE98200CCC2C8 /* ATCNavigationController.swift */,
@@ -229,11 +232,14 @@
 		17AF80FB1E46946100F66FE8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				17D350121E889C7700B8B661 /* Layouts */,
 				17A206141E4FB7E200CCC2C8 /* Settings */,
 				17A205FA1E4C2E0F00CCC2C8 /* Navigation */,
-				17AF81081E4694DB00F66FE8 /* ATCTableViewController.swift */,
 				17AF81191E495BE000F66FE8 /* ATCLoginViewController.swift */,
 				17AF811A1E495BE000F66FE8 /* ATCLoginViewController.xib */,
+				17D350151E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift */,
+				17D350171E889D0500B8B661 /* ATCViewControllerContextProvider.swift */,
+				17D350191E889D2A00B8B661 /* ATCCollectionViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
@@ -315,6 +321,15 @@
 				17A206011E4C3C2500CCC2C8 /* TestVCs */,
 			);
 			path = AppTemplatesFoundation;
+			sourceTree = "<group>";
+		};
+		17D350121E889C7700B8B661 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				17D350131E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift */,
+			);
+			name = Layouts;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4672AD9ECC2876FADFED6970 /* Pods */ = {
@@ -475,7 +490,6 @@
 				17A206161E4FB80600CCC2C8 /* ATCSettingsTableViewController.swift in Sources */,
 				17A2062B1E50021000CCC2C8 /* ATCStripeCheckoutViewController.swift in Sources */,
 				17AF81071E4694D300F66FE8 /* ATCNetworkingManager.swift in Sources */,
-				17A2060F1E4EBEC000CCC2C8 /* ATCNavigationToolbarController.swift in Sources */,
 				17AF81281E4970C700F66FE8 /* ATCFirebaseLoginManager.swift in Sources */,
 				17A206291E5001BC00CCC2C8 /* ATCStripeCheckoutRowView.swift in Sources */,
 				17A205FC1E4C2E6E00CCC2C8 /* ATCHostViewController.swift in Sources */,
@@ -488,7 +502,6 @@
 				17A2062F1E5002ED00CCC2C8 /* ATCStripeSettingsViewController.swift in Sources */,
 				17A206061E4EB9B000CCC2C8 /* ATCMenuTableViewController.swift in Sources */,
 				17AF810E1E4694E400F66FE8 /* ATCFacebookAPIManager.swift in Sources */,
-				17AF810A1E4694DB00F66FE8 /* ATCTableViewController.swift in Sources */,
 				17AF81051E4694CD00F66FE8 /* ATCBaseModel.swift in Sources */,
 				17AF810F1E4694E400F66FE8 /* ATCAPIManager.swift in Sources */,
 				17A206261E4FE98200CCC2C8 /* ATCNavigationController.swift in Sources */,
@@ -497,10 +510,14 @@
 				17A206181E4FB83E00CCC2C8 /* ATCSettingsItem.swift in Sources */,
 				17AF81131E46958400F66FE8 /* A1TableViewController.swift in Sources */,
 				17AF80E81E46933200F66FE8 /* ATCWordpressPost.swift in Sources */,
+				17D3501A1E889D2A00B8B661 /* ATCCollectionViewController.swift in Sources */,
 				17AF81041E4694CD00F66FE8 /* ATCUser.swift in Sources */,
 				17CCC7101E46916800F41ACD /* ViewController.swift in Sources */,
+				17D350161E889CCE00B8B661 /* ATCLiquidCollectionViewController.swift in Sources */,
 				17AF81221E495F5500F66FE8 /* ATCViewControllerFactory.swift in Sources */,
 				17AF81181E495A8E00F66FE8 /* AppConfiguration.swift in Sources */,
+				17D350141E889C9C00B8B661 /* ATCLiquidCollectionViewLayout.swift in Sources */,
+				17D350181E889D0500B8B661 /* ATCViewControllerContextProvider.swift in Sources */,
 				17CCC70E1E46916800F41ACD /* AppDelegate.swift in Sources */,
 				17A2060C1E4EBB4F00CCC2C8 /* ATCMenuTableViewCell.swift in Sources */,
 				17A2062D1E50026900CCC2C8 /* ATCStripeButtons.swift in Sources */,

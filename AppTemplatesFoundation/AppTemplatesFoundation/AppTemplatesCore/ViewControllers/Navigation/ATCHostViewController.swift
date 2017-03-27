@@ -44,18 +44,21 @@ open class ATCHostViewController: UIViewController {
     let items: [ATCNavigationItem]
     let style: ATCNavigationStyle
     let topNavigationRightViews: [UIView]
+    var topNavigationLeftImage: UIImage?
 
     open var tabController: UITabBarController?
     open var navigationToolbarController: ATCNavigationController?
     open var menuViewController: ATCMenuTableViewController?
     open var drawerController: ATCNavigationDrawerController?
 
-    init(style: ATCNavigationStyle, items: [ATCNavigationItem], user: ATCUser? = nil, topNavigationRightViews: [UIView] = [UIView]()) {
+    init(style: ATCNavigationStyle, items: [ATCNavigationItem], user: ATCUser? = nil, topNavigationRightViews: [UIView] = [UIView](), topNavigationLeftImage: UIImage? = nil) {
         self.style = style
         self.items = items
         self.user = user
         self.topNavigationRightViews = topNavigationRightViews
+        self.topNavigationLeftImage = topNavigationLeftImage ?? Icon.cm.menu
         super.init(nibName: nil, bundle: nil)
+        configureChildrenViewControllers()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -64,8 +67,17 @@ open class ATCHostViewController: UIViewController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        if (style == .tabBar) {
+            self.view.addSubview(tabController!.view)
+        } else {
+            self.view.addSubview(drawerController!.view)
+        }
 
-        // Set root view controller
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSForegroundColorAttributeName:UIColor.white], for: .normal)
+        navigationToolbarController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+
+    fileprivate func configureChildrenViewControllers() {
         if (style == .tabBar) {
             let navigationControllers = items.filter{$0.type == .viewController}.map { UINavigationController(rootViewController: $0.viewController) }
             tabController = UITabBarController()
@@ -73,16 +85,14 @@ open class ATCHostViewController: UIViewController {
             for (tag, item) in items.enumerated() {
                 item.viewController.tabBarItem = UITabBarItem(title: item.title, image: item.image, tag: tag)
             }
-            self.view.addSubview(tabController!.view)
         } else {
             guard let firstVC = items.first?.viewController else { return }
-            navigationToolbarController = ATCNavigationController(rootViewController: firstVC, topNavigationRightViews: topNavigationRightViews)
+            navigationToolbarController = ATCNavigationController(rootViewController: firstVC, topNavigationRightViews: topNavigationRightViews, topNavigationLeftImage: topNavigationLeftImage)
             menuViewController = ATCMenuTableViewController(items: items, user: user, nibNameOrNil: "ATCMenuTableViewController", bundle: nil)
             drawerController = ATCNavigationDrawerController(rootViewController: navigationToolbarController!, leftViewController: menuViewController, rightViewController: nil)
             if let drawerController = drawerController {
                 self.addChildViewController(drawerController)
             }
-            self.view.addSubview(drawerController!.view)
         }
     }
 }

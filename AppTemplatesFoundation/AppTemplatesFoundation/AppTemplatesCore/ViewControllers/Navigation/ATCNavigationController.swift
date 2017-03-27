@@ -12,10 +12,12 @@ import UIKit
 open class ATCNavigationController: NavigationController, UINavigationControllerDelegate {
     fileprivate var menuButton: IconButton!
     fileprivate var topNavigationRightViews: [UIView] = [UIView]()
+    fileprivate var topNavigationLeftImage: UIImage?
 
-    public init(rootViewController: UIViewController, topNavigationRightViews: [UIView]) {
+    public init(rootViewController: UIViewController, topNavigationRightViews: [UIView], topNavigationLeftImage: UIImage?) {
         super.init(rootViewController: rootViewController)
         self.topNavigationRightViews = topNavigationRightViews
+        self.topNavigationLeftImage = topNavigationLeftImage
     }
 
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -44,19 +46,17 @@ open class ATCNavigationController: NavigationController, UINavigationController
 
 extension ATCNavigationController {
     fileprivate func prepareMenuButton() {
-        menuButton = IconButton(image: Icon.cm.menu)
+        menuButton = IconButton(image: topNavigationLeftImage)
         menuButton.addTarget(self, action: #selector(handleMenuButton), for: .touchUpInside)
     }
 
     fileprivate func prepareStatusBar() {
         statusBarStyle = .lightContent
-
-        // Access the statusBar.
-        //        statusBar.backgroundColor = Color.green.base
     }
 
     fileprivate func prepareNavigationBar() {
         topViewController?.navigationItem.title = topViewController?.title
+
         if self.viewControllers.count <= 1 {
             topViewController?.navigationItem.leftViews = [menuButton]
             topViewController?.navigationItem.rightViews = topNavigationRightViews
