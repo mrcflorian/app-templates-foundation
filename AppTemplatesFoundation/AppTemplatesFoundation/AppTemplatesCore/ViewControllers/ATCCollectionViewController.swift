@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ATCCollectionViewController<T: ATCBaseModel>: UICollectionViewController, ATCViewControllerRemoteHostContextProvider {
+open class ATCCollectionViewController<T: ATCBaseModel>: UICollectionViewController, ATCRemoteHostContextProvider {
 
     var apiManager: ATCAPIManager?
 
@@ -42,7 +42,7 @@ open class ATCCollectionViewController<T: ATCBaseModel>: UICollectionViewControl
         return streamObjects.count
     }
 
-    // MARK: ATCViewControllerRemoteHostContextProvider
+    // MARK: ATCRemoteHostContextProvider
 
     public func urlEndpointPath() -> String? {
         return nil

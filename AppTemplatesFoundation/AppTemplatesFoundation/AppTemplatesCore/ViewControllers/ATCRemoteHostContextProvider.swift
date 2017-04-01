@@ -6,6 +6,6 @@
 //  Copyright © 2017 iOS App Templates. All rights reserved.
 //
 
-public protocol ATCViewControllerRemoteHostContextProvider {
+public protocol ATCRemoteHostContextProvider {
     func urlEndpointPath() -> String?
 }
