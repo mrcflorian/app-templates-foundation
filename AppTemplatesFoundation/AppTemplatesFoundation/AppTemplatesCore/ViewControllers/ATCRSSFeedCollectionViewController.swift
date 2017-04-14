@@ -13,12 +13,14 @@ class ATCRSSFeedCollectionViewController<T: ATCBaseModel & ATCRSSItemBaseModel>:
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        apiManager?.retrieveRSSFeed(parameters: [:], completion: { (rssFeed: RSSFeed?, status: ATCNetworkResponseStatus) in
-            if let objects = rssFeed?.items.map({ T(rssItem: $0) }) {
-                self.streamObjects = objects
-            } else {
-                // TODO: Error case
-            }
-        })
+        if let path = urlEndpointPath() {
+            apiManager?.retrieveRSSFeed(urlPath: path, parameters: [:], completion: { (rssFeed: RSSFeed?, status: ATCNetworkResponseStatus) in
+                if let objects = rssFeed?.items.map({ T(rssItem: $0) }) {
+                    self.streamObjects = objects
+                } else {
+                    // TODO: Error case
+                }
+            })
+        }
     }
 }

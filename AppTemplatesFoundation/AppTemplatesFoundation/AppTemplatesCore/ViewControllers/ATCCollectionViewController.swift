@@ -20,9 +20,7 @@ open class ATCCollectionViewController<T: ATCBaseModel>: UICollectionViewControl
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        if let path = urlEndpointPath() {
-            apiManager = ATCAPIManager(urlPath: path)
-        }
+        apiManager = ATCAPIManager()
     }
 
     public func object(at indexPath: IndexPath) -> T? {

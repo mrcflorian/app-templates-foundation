@@ -56,6 +56,7 @@ extension ATCNavigationController {
 
     fileprivate func prepareNavigationBar() {
         topViewController?.navigationItem.title = topViewController?.title
+        navigationBar.topItem?.titleLabel.textColor = .white
 
         if self.viewControllers.count <= 1 {
             topViewController?.navigationItem.leftViews = [menuButton]

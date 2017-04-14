@@ -10,14 +10,9 @@ import AlamofireRSSParser
 
 public class ATCAPIManager {
 
-    fileprivate var urlPath: String
     fileprivate let networkingMananger = ATCNetworkingManager()
 
-    public required init(urlPath: String) {
-        self.urlPath = urlPath
-    }
-
-    func retrieveObjectFromJSON<T: ATCBaseModel>(parameters: [String:String]?, completion: @escaping (_ object: T?, _ status: ATCNetworkResponseStatus) -> Void) {
+    func retrieveObjectFromJSON<T: ATCBaseModel>(urlPath: String, parameters: [String:String]?, completion: @escaping (_ object: T?, _ status: ATCNetworkResponseStatus) -> Void) {
         networkingMananger.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: ATCNetworkResponseStatus) in
             if let jsonDict = jsonData as? [String: Any] {
                 completion(T(JSON: jsonDict), status)
@@ -27,7 +22,7 @@ public class ATCAPIManager {
         }
     }
 
-    func retrieveListFromJSON<T: ATCBaseModel>(parameters: [String:String]?, completion: @escaping (_ objects: [T]?, _ status: ATCNetworkResponseStatus) -> Void) {
+    func retrieveListFromJSON<T: ATCBaseModel>(urlPath: String, parameters: [String:String]?, completion: @escaping (_ objects: [T]?, _ status: ATCNetworkResponseStatus) -> Void) {
         networkingMananger.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: ATCNetworkResponseStatus) in
             if let jsonArray = jsonData as? [[String: Any]] {
                 completion(jsonArray.flatMap{T(JSON: $0)}, status)
@@ -37,7 +32,7 @@ public class ATCAPIManager {
         }
     }
 
-    func retrieveRSSFeed(parameters: [String:String]?, completion: @escaping (_ rssFeed: RSSFeed?, _ status: ATCNetworkResponseStatus) -> Void) {
+    func retrieveRSSFeed(urlPath: String, parameters: [String:String]?, completion: @escaping (_ rssFeed: RSSFeed?, _ status: ATCNetworkResponseStatus) -> Void) {
         networkingMananger.getRSSFeedResponse(path: urlPath, parameters: parameters) { (rssFeed: RSSFeed?, status: ATCNetworkResponseStatus) in
             completion(rssFeed, status)
         }
