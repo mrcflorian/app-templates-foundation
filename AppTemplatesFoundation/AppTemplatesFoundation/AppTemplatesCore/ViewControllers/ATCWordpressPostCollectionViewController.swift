@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ATCWordpressPostCollectionViewController<T: ATCBaseModel>: ATCCollectionViewController<T> {
+public class ATCWordpressPostCollectionViewController2<T: ATCBaseModel & NSCoding>: ATCCollectionViewController<T> {
     override public func viewDidLoad() {
         super.viewDidLoad()
         if let path = urlEndpointPath() {

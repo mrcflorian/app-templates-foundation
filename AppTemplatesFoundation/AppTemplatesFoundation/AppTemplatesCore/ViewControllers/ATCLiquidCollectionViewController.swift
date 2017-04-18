@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCLiquidCollectionViewController<T: ATCBaseModel>: ATCWordpressPostCollectionViewController<T>, ATCLiquidLayoutDelegate {
+class ATCLiquidCollectionViewController<T: ATCBaseModel & NSCoding>: ATCCollectionViewController<T>, ATCLiquidLayoutDelegate {
 
     public required init() {
         let layout = ATCLiquidCollectionViewLayout()
