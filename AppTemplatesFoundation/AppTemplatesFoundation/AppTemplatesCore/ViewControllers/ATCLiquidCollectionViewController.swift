@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCLiquidCollectionViewController<T: ATCBaseModel & NSCoding>: ATCCollectionViewController<T>, ATCLiquidLayoutDelegate {
+class ATCLiquidCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: ATCCollectionViewController<T>, ATCLiquidLayoutDelegate {
 
     public required init() {
         let layout = ATCLiquidCollectionViewLayout()

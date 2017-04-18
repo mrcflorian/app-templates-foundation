@@ -9,7 +9,7 @@
 import AlamofireRSSParser
 import UIKit
 
-class ATCRSSFeedCollectionViewController<T: ATCBaseModel & ATCRSSItemBaseModel & NSCoding>: ATCCollectionViewController<T> {
+class ATCRSSFeedCollectionViewController<T: ATCBaseModel & ATCRSSItemBaseModel & NSCoding & Equatable>: ATCCollectionViewController<T> {
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class ATCCollectionViewController<T: ATCBaseModel & NSCoding>: UICollectionViewController, ATCRemoteHostContextProvider {
+open class ATCCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: UICollectionViewController, ATCRemoteHostContextProvider {
 
     private let archiveItemsURL = FileManager().urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent(String(describing: ATCCollectionViewController.self))
 
@@ -18,7 +18,7 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding>: UICollection
     var streamObjects = [T]() {
         didSet {
             self.collectionView?.reloadData()
-            saveCurrentObjectsToDiskIfNeeded()
+            saveCurrentObjectsToDisk()
         }
     }
 
@@ -30,7 +30,7 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding>: UICollection
         apiManager = ATCAPIManager()
         if let path = urlEndpointPath() {
             apiManager?.retrieveListFromJSON(urlPath: path, parameters: [:], completion: { (objects : [T]?, status) in
-                if let objects = objects {
+                if let objects = objects, !self.equalStreamObjects(objects1: self.streamObjects, objects2: objects) {
                     self.streamObjects = objects
                 }
             })
@@ -61,7 +61,7 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding>: UICollection
     }
 
     // MARK: Private
-    private func saveCurrentObjectsToDiskIfNeeded() {
+    private func saveCurrentObjectsToDisk() {
         let success = NSKeyedArchiver.archiveRootObject(self.streamObjects, toFile: archiveItemsURL.path)
         if (!success) {
             print("Unable to write to disk")
@@ -72,5 +72,17 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding>: UICollection
         if let streamObjects = NSKeyedUnarchiver.unarchiveObject(withFile: archiveItemsURL.path) as? [T] {
             self.streamObjects = streamObjects
         }
+    }
+
+    private func equalStreamObjects(objects1: [T], objects2: [T]) -> Bool {
+        if (objects1.count != objects2.count) {
+            return false
+        }
+        for i in 0 ..< objects1.count {
+            if (objects1[i] != objects2[i]) {
+                return false;
+            }
+        }
+        return true
     }
 }
