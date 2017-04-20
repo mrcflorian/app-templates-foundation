@@ -28,6 +28,7 @@ public class ATCLiquidCollectionViewLayout: UICollectionViewLayout {
         }
         return 0
     }
+    fileprivate var numberOfItems = 0
 
     override public var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
@@ -39,10 +40,12 @@ public class ATCLiquidCollectionViewLayout: UICollectionViewLayout {
         let numberOfColumns = Int(contentWidth / cellWidth)
         let totalSpaceWidth = contentWidth - CGFloat(numberOfColumns) * cellWidth
         let horizontalPadding = totalSpaceWidth / CGFloat(numberOfColumns + 1)
+        let numberOfItems = collectionView.numberOfItems(inSection: 0)
 
-        if (contentWidth != cachedWidth) {
+        if (contentWidth != cachedWidth || self.numberOfItems != numberOfItems) {
             cache = []
             contentHeight = 0
+            self.numberOfItems = numberOfItems
         }
 
         if cache.isEmpty {
@@ -54,7 +57,7 @@ public class ATCLiquidCollectionViewLayout: UICollectionViewLayout {
             var column = 0
             var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
 
-            for row in 0 ..< collectionView.numberOfItems(inSection: 0) {
+            for row in 0 ..< numberOfItems {
 
                 let indexPath = IndexPath(row: row, section: 0)
 

@@ -11,12 +11,12 @@ import UIKit
 public class ATCWordpressPostCollectionViewController2<T: ATCBaseModel & NSCoding & Equatable>: ATCCollectionViewController<T> {
     override public func viewDidLoad() {
         super.viewDidLoad()
-        if let path = urlEndpointPath() {
-            apiManager?.retrieveListFromJSON(urlPath: path, parameters: [:], completion: { (objects : [T]?, status) in
-                if let objects = objects {
-                    self.streamObjects = objects
-                }
-            })
-        }
+       // if let path = urlEndpointPath() {
+         //   apiManager?.retrieveListFromJSON(urlPath: path, parameters: [:], completion: { (objects : [T]?, status) in
+              //  if let objects = objects {
+                //    self.streamObjects = objects
+                //}
+           // })
+        //}
     }
 }
