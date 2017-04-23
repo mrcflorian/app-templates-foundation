@@ -14,13 +14,9 @@ public protocol ATCStreamManagerDataSource: class {
 }
 
 public protocol ATCStreamManagerDelegate: class {
-    func streamManagerDidFinishLoadingBottom()
+    func streamManagerDidFinishLoadingBottom(streamEnded: Bool)
     func streamManagerDidFinishLoadingTop()
     func streamManagerDidFail()
-}
-
-public struct ATCStream {
-
 }
 
 public class ATCStreamManager<T: ATCBaseModel & NSCoding & Equatable> {
@@ -31,6 +27,7 @@ public class ATCStreamManager<T: ATCBaseModel & NSCoding & Equatable> {
 
     private var isLoadingTop = false
     private var isLoadingBottom = false
+    private var bottomStreamLoadingEnded = false
 
     weak var delegate: ATCStreamManagerDelegate?
     weak var dataSource: ATCStreamManagerDataSource?
@@ -62,7 +59,7 @@ public class ATCStreamManager<T: ATCBaseModel & NSCoding & Equatable> {
     }
 
     func loadBottom() {
-        if isLoadingBottom {
+        if isLoadingBottom || bottomStreamLoadingEnded{
             return
         }
         if let dataSource = dataSource {
@@ -75,7 +72,10 @@ public class ATCStreamManager<T: ATCBaseModel & NSCoding & Equatable> {
                         self.streamObjects = self.streamObjects + [$0]
                     }
                 })
-                self.delegate?.streamManagerDidFinishLoadingBottom()
+                if ((objects?.count ?? 0) == 0) {
+                    self.bottomStreamLoadingEnded = true
+                }
+                self.delegate?.streamManagerDidFinishLoadingBottom(streamEnded: self.bottomStreamLoadingEnded)
                 self.isLoadingBottom = false
             })
         } else {

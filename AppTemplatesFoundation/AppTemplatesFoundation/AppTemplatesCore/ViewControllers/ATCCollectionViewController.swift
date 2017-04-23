@@ -14,6 +14,8 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: 
     private let archiveItemsURL = FileManager().urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent(String(describing: ATCCollectionViewController.self))
     private let kLoadMoreBottomDistance: CGFloat = 10.0
 
+    private var didFinishLoadingBottom = false
+
     lazy var streamObjectsOnDisk: [T]? = {
         [unowned self] in
         return NSKeyedUnarchiver.unarchiveObject(withFile: self.archiveItemsURL.path) as? [T]
@@ -47,6 +49,15 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: 
         collectionView?.addSubview(refreshControl)
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(loadTop), for: .valueChanged)
+
+        let cellNib = UINib(nibName: "ATCLoadMoreCollectionViewCell", bundle: nil)
+        collectionView?.register(cellNib, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "ATCLoadMoreCollectionViewCell")
+
+        if let collectionView = collectionView {
+            let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            collectionViewLayout?.footerReferenceSize = CGSize(width: collectionView.bounds.width, height: 100)
+        }
+
         loadMoreData()
     }
 
@@ -67,6 +78,20 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: 
         return streamObjects.count
     }
 
+    override open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionFooter {
+            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "ATCLoadMoreCollectionViewCell", for: indexPath)
+        }
+        fatalError("should not happen")
+    }
+
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if !didFinishLoadingBottom {
+            return CGSize(width: collectionView.bounds.width, height: 100)
+        }
+        return .zero
+    }
+
     // MARK: ATCRemoteHostContextProvider
 
     public func urlEndpointPath() -> String? {
@@ -75,7 +100,10 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: 
 
     // MARK: ATCStreamManagerDelegate
 
-    public func streamManagerDidFinishLoadingBottom() {
+    public func streamManagerDidFinishLoadingBottom(streamEnded: Bool) {
+        if (streamEnded) {
+            didFinishLoadingBottom = true
+        }
         self.collectionView?.reloadData()
         saveCurrentObjectsToDisk()
     }
@@ -101,7 +129,7 @@ open class ATCCollectionViewController<T: ATCBaseModel & NSCoding & Equatable>: 
     }
 
     // MARK: UIScrollViewDelegate
-    open override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    open override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
