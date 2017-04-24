@@ -16,12 +16,17 @@ public enum ATCNetworkResponseStatus {
 
 public class ATCNetworkingManager {
 
+    let queue = DispatchQueue(label: "networking-manager-requests", qos: .utility, attributes: .concurrent)
+
     func getJSONResponse(path: String, parameters: [String:String]?, completionHandler: @escaping (_ response: Any?,_ status: ATCNetworkResponseStatus) -> Void) {
-        Alamofire.request(path).responseJSON { response in
-            if let json = response.result.value {
-                completionHandler(json, .success)
-            } else {
-                completionHandler(nil, .error(string: response.result.error?.localizedDescription))
+
+        Alamofire.request(path).responseJSON(queue: queue, options: []) { (response) in
+            DispatchQueue.main.async {
+                if let json = response.result.value {
+                    completionHandler(json, .success)
+                } else {
+                    completionHandler(nil, .error(string: response.result.error?.localizedDescription))
+                }
             }
         }
     }
